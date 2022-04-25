@@ -4,6 +4,7 @@ import Header from './Header'
 
 export default function Layout({ children, title = 'hoshi-code' }) {
   return (
+    
     <div className='bg-gradient-to-br from-primary to-secondary'>
       <Header />
       {children}

@@ -12,7 +12,7 @@ type Blog = {
   updateAt: string;
 };
 export default function Card(props) {
-  console.log(props);
+  //console.log(props);
   //const { children, blog } = props;
   const [mouseOver, setMouseOver] = useState(false);
   return (

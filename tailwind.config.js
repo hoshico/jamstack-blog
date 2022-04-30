@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ["cmyk"],
+    themes: ["cmyk", "winter"],
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 }

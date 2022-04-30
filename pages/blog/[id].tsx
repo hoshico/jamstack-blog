@@ -12,28 +12,30 @@ export default function Blog({ blog, highlightedBody }) {
 
   return (
     <Layout>
-      <div className="main bg-blue-100 w-full m-auto ">
-        <div className="min-h-screen">
-          <div className="py-20">
-            <div className="text-center text-4xl font-extrabold tracking-wider">
-              {blog.title}
-            </div>
-            <div className="w-28 mt-5 m-auto flex">
-              <Moment className="text-xs text-gray-400" format="YYYY.MM.DD">
-                {blog.publishedAt}
-              </Moment>
-              <p className="text-xs text-gray-400">に公開</p>
-            </div>
-            {/*メインコンテンツ*/}  
-            <div className="max-w-7xl px-10 mt-12 mx-auto flex justify-between">
-              {/*本文*/}
-              <div className="w-[calc(100%_-_288px)] p-10 bg-base-100 rounded">
-              <div dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>
+      <div data-theme="winter">
+        <div className="bg-gradient-to-b from-primary-content to-neutral-content w-full m-auto ">
+          <div className="min-h-screen">
+            <div className="py-20">
+              <div className="text-center text-4xl font-extrabold tracking-wider">
+                {blog.title}
               </div>
-              {/*サイド*/}
-              <aside className="w-72 p-10 bg-base-100 ml-5 rounded">
-                  {blog.category ? <p>{blog.category.name}</p> : <p>ない</p>}
-              </aside>
+              <div className="w-28 mt-5 m-auto flex">
+                <Moment className="text-xs text-gray-400" format="YYYY.MM.DD">
+                  {blog.publishedAt}
+                </Moment>
+                <p className="text-xs text-gray-400">に公開</p>
+              </div>
+              {/*メインコンテンツ*/}  
+              <div className="max-w-7xl px-10 mt-12 mx-auto flex justify-between">
+                {/*本文*/}
+                <div className="w-[calc(100%_-_288px)] p-10 bg-base-100 rounded">
+                  <div className="main-text" dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>
+                </div>
+                {/*サイド*/}
+                <aside className="w-72 p-10 bg-base-100 ml-5 rounded">
+                    {blog.category ? <p>{blog.category.name}</p> : <p>ない</p>}
+                </aside>
+              </div>
             </div>
           </div>
         </div>

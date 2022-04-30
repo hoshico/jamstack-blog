@@ -2,3 +2,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* リッチエディタ内 */
+.main-text u {
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: 3px solid rgb(73, 148, 213);
+  padding-bottom: 2px;
+}
+.main-text P {
+  line-height: 2.5;
+}
+.main-text ul {
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  line-height: 1.7;
+}
+.main-text a {
+  color: rgb(0, 119, 255);
+  line-height: 1;
+}
+.main-text a:hover {
+  border-bottom: 1px solid rgb(0, 119, 255);
+}

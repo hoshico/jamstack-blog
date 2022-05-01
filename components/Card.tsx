@@ -26,7 +26,7 @@ export default function Card(props) {
             <img
               className={
                 mouseOver
-                  ? 'object-cover w-full h-full scale-125 transition'
+                  ? 'object-cover w-full h-full scale-110 transition'
                   : 'object-cover w-full h-full transition'
               }
               src={

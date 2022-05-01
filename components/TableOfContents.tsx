@@ -2,7 +2,7 @@
 export default function TableOfContents({toc}) {
 
   return (
-    <div className="sticky top-10 bg-base-100 py-10 px-2 w-[250px] h-[fit-content] shadow rounded-xl sm:hidden md:block">
+    <div className="sticky top-10 bg-base-100 py-10 px-2 w-[250px] h-[fit-content] shadow rounded-xl hidden md:block">
       <p className="font-bold mb-5 pl-2">目次</p>
       <ul className="list-disc pl-6">
         {toc.map(data => (

@@ -1,5 +1,5 @@
-import { GetStaticProps } from 'next';
-import React from 'react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import React, { ReactNode } from 'react';
 import Moment from 'react-moment';
 import Layout from '../../components/Layout';
 import { client } from '../../libs/client';
@@ -8,11 +8,18 @@ import hljs from 'highlight.js';
 import "highlight.js/styles/hybrid.css";
 import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../../components/TableOfContents';
+import type { Blog } from '../../components/types/Blog';
+import { Params } from 'next/dist/server/router';
+import type { Props } from '../index';
 
-
-export default function Blog({ blog, highlightedBody }) {
+type BlogDetail = {
+  blog: Blog;
+  highlightedBody?: any;
+};
+export default function Blog({ blog, highlightedBody }: BlogDetail) {
+  console.log(blog.body)
   const toc = renderToc(blog.body)
-  //console.log(toc)
+  console.log(toc)
   return (
     <Layout>
       <div data-theme="winter">
@@ -36,9 +43,6 @@ export default function Blog({ blog, highlightedBody }) {
                 </div>
                 {/*サイド*/}
                 <TableOfContents toc={toc}/>
-                {/*<aside className="w-72 p-10 bg-base-100 ml-5 rounded">
-                    {blog.category ? <p>{blog.category.name}</p> : <p>ない</p>}
-                </aside>*/}
               </div>
             </div>
           </div>
@@ -49,15 +53,15 @@ export default function Blog({ blog, highlightedBody }) {
 }
 
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const data = await client.get({ endpoint: "blog" });
 
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  const paths = data.contents.map((content: any) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: any) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
 

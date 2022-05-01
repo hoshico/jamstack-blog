@@ -12,7 +12,7 @@ type Blog = {
   updateAt: string;
 };
 export default function Card(props) {
-  //console.log(props);
+  
   //const { children, blog } = props;
   const [mouseOver, setMouseOver] = useState(false);
   return (
@@ -48,9 +48,11 @@ export default function Card(props) {
             {/*<div className="badge badge-secondary">NEW</div>*/}
             <div className="card-actions justify-end">
               {props.blog.category ? (
-                <div className="badge badge-outline">
-                  {props.blog.category.name}
-                </div>
+                props.blog.category.map(category => (
+                  <div key={category.id} className="badge badge-outline">
+                    <p >{category.name}</p>
+                  </div>
+                ))
               ) : (
                 <div className="badge badge-outline">その他</div>
               )}

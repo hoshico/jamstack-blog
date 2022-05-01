@@ -1,10 +1,17 @@
+import { Category } from "./Category";
+
 export type Blog = {
-  id: string;
-  title: string;
   body: string;
-  category: string;
+  category: Array<Category>;
   createdAt: string;
-  updatedAt: string;
+  id: string;
+  photo: {
+    height: number;
+    url: string;
+    width: number;
+  }
   publishedAt: string;
-  revisedAt: string;
+  title: string;
+  updatedAt?: string;
+  revisedAt?: string;
 }

@@ -1,23 +1,16 @@
 import Link from 'next/link';
-import React, { Children, useState } from 'react';
+import React, { useState } from 'react';
 import Moment from 'react-moment';
+import { Blog } from './types/Blog';
 
-type Blog = {
-  id: string;
-  createdAt: string;
-  category?: string;
-  photo: any;
-  title: string;
-  revudedAt: string;
-  updateAt: string;
-};
-export default function Card(props) {
-  
-  //const { children, blog } = props;
+type Card = {
+  blog: Blog;
+}
+export default function Card(props: Card) {
   const [mouseOver, setMouseOver] = useState(false);
   return (
     <Link href={`/blog/${props.blog.id}`}>
-      <a href="">
+      <a>
         <div
           className="card w-full bg-base-100 shadow-xl"
           onMouseOver={() => setMouseOver(true)}

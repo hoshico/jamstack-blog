@@ -6,7 +6,7 @@ import Card from '../components/Card';
 import { Blog } from '../components/types/Blog';
 import { Category } from '../components/types/Category';
 
-type Props = {
+export type Props = {
   blogs: Array<Blog>;
   category: Array<Category>;
 };
@@ -21,7 +21,7 @@ export default function Home({ blogs, category }: Props) {
     } else {
       // カテゴリーを持つ記事を選択
       const selectBlogs = blogs.filter(blog => {
-        console.log(blog.category)
+        //console.log(blog.category)
         const haveCategory = blog.category.map((category) => category.name);
         return haveCategory.includes(category);
       });

@@ -12,7 +12,6 @@ type Props = {
 
 export default function Home({ blogs, category }) {
   const [showBlogs, setShowBlogs] = useState(blogs);
-  const categoryNameAndImageList = category.map(category => [category.name, category.image.url]);
   const selectCategory = category => {
     if (category === 'all') {
       setShowBlogs(blogs);
@@ -55,17 +54,17 @@ export default function Home({ blogs, category }) {
           <ul className="list-disc pl-6">
             <li className="flex items-center mb-3 hover:opacity-60 cursor-pointer" onClick={() => selectCategory('all')}>
               <div className="w-8 mr-4 mask mask-squircle">
-                <svg className="w-8 h-8 dark:text-white bg-base-content" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                <svg className="w-8 h-8 p-1 dark:text-white bg-base-content" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
               </div>
               <p>ALL</p>
             </li>
-            {categoryNameAndImageList.length ? (
-              categoryNameAndImageList.map(category => (
-                <li key={category[0]} className="flex hover:opacity-60 items-center mb-3 cursor-pointer" onClick={() => selectCategory(category[0])}>
+            {category.length ? (
+              category.map(category => (
+                <li key={category.id} className="flex hover:opacity-60 items-center mb-3 cursor-pointer" onClick={() => selectCategory(category.name)}>
                   <div className="w-8 mr-4 mask mask-squircle">
-                    <img src={category[1]} />
+                    <img src={category.image.url} />
                   </div>
-                  <p>{category[0]}</p>
+                  <p>{category.name}</p>
                 </li>
               ))
             ) : (

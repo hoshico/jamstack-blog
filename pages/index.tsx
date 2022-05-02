@@ -13,7 +13,7 @@ export type Props = {
 
 
 export default function Home({ blogs, category }: Props) {
-  console.log(blogs)
+  //console.log(blogs)
   const [showBlogs, setShowBlogs] = useState(blogs);
   const selectCategory = (category: string) => {
     if (category === 'all') {

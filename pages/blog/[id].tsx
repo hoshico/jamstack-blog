@@ -17,9 +17,7 @@ type BlogDetail = {
   highlightedBody?: any;
 };
 export default function Blog({ blog, highlightedBody }: BlogDetail) {
-  console.log(blog.body)
   const toc = renderToc(blog.body)
-  console.log(toc)
   return (
     <Layout>
       <div data-theme="winter">

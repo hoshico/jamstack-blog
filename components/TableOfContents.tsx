@@ -7,7 +7,6 @@ type TocProps = {
   toc: Array<Toc>;
 }
 export default function TableOfContents({toc}: TocProps) {
-  console.log(toc)
   return (
     <div className="sticky top-10 bg-base-100 py-10 px-2 w-[250px] h-[fit-content] shadow rounded-xl hidden md:block">
       <p className="font-bold mb-5 pl-2">目次</p>

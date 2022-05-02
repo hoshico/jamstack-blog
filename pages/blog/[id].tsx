@@ -1,5 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import React, { ReactNode } from 'react';
+import { GetStaticPaths } from 'next';
 import Moment from 'react-moment';
 import Layout from '../../components/Layout';
 import { client } from '../../libs/client';
@@ -10,7 +9,6 @@ import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../../components/TableOfContents';
 import type { Blog } from '../../components/types/Blog';
 import { Params } from 'next/dist/server/router';
-import type { Props } from '../index';
 
 type BlogDetail = {
   blog: Blog;

@@ -13,7 +13,6 @@ export type Props = {
 
 
 export default function Home({ blogs, category }: Props) {
-  //console.log(blogs)
   const [showBlogs, setShowBlogs] = useState(blogs);
   const selectCategory = (category: string) => {
     if (category === 'all') {
@@ -21,7 +20,6 @@ export default function Home({ blogs, category }: Props) {
     } else {
       // カテゴリーを持つ記事を選択
       const selectBlogs = blogs.filter(blog => {
-        //console.log(blog.category)
         const haveCategory = blog.category.map((category) => category.name);
         return haveCategory.includes(category);
       });

@@ -39,7 +39,7 @@ export default function Home({ blogs, category }: Props) {
                 <ul className="grid grid-cols-1 gap-5  sm:grid-cols-2 lg:grid-cols-3">
                   {!showBlogs.length ? (
                     <p className="m-auto text-xl font-bold text-center">
-                      ただいま準備中
+                      まだ投稿はありません
                     </p>
                   ) : (
                     showBlogs.map(blog => (

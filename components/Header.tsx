@@ -26,6 +26,11 @@ export default function Header() {
               <span className="text-primary">hoshi</span>code
             </a>
           </Link>
+          <Link href="/about">
+            <a className="ml-auto mr-5 text-xl normal-case btn btn-ghost">
+              <p>about</p>
+            </a>
+          </Link>
         </div>
       </div>
     </header>

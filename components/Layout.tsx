@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from './Footer';

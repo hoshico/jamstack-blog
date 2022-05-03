@@ -7,7 +7,9 @@ interface Props {
 
 const ErrorPage: NextPage<Props> = ({ statusCode }) => {
   return statusCode ? (
-    <Error statusCode={statusCode}></Error>
+    <>
+      <Error statusCode={statusCode}></Error>
+    </>
   ) : (
     <p>An error occurred on client</p>
   )

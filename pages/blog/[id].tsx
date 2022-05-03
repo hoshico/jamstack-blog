@@ -36,7 +36,7 @@ export default function Blog({ blog, highlightedBody }: BlogDetail) {
               <div className="flex justify-between px-10 mx-auto mt-12 max-w-7xl">
                 {/*本文*/}
                 <div className="p-10 w-full rounded-xl shadow md:w-[calc(100%_-_288px)] bg-base-100">
-                  {/*<div className="main-text" dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>*/}
+                  <div className="main-text" dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>
                 </div>
                 {/*サイド*/}
                 <TableOfContents toc={toc}/>

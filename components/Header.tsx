@@ -22,12 +22,12 @@ export default function Header() {
         </div>*/}
         <div className="flex-1">
           <Link href="/">
-            <a className="ml-5 text-3xl normal-case btn btn-ghost">
+            <a className="ml-2 md:ml-5 text-3xl normal-case btn btn-ghost">
               <span className="text-primary">hoshi</span>code
             </a>
           </Link>
           <Link href="/about">
-            <a className="ml-auto mr-5 text-xl normal-case btn btn-ghost">
+            <a className="ml-auto mr-2 md:mr-5 text-xl normal-case btn btn-ghost">
               <p>about</p>
             </a>
           </Link>

@@ -17,12 +17,12 @@ export default function Card(props: Card) {
             className="w-full shadow-xl card bg-base-100"
             onMouseOver={() => setMouseOver(true)}
             onMouseLeave={() => setMouseOver(false)}>
-            <figure className="overflow-hidden h-32 lg:h-40">
+            <figure className="hidden md:block overflow-hidden h-[fit-content] md:h-32 lg:h-40">
               <img
                 className={
                   mouseOver
-                    ? 'object-cover w-full h-full scale-110 transition'
-                    : 'object-cover w-full h-full transition'
+                    ? 'hidden sm:block object-cover w-full md:h-full scale-110 transition'
+                    : 'hidden sm:block object-cover w-full md:h-full transition'
                 }
                 src={
                   props.blog.photo

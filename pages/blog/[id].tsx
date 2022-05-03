@@ -23,19 +23,19 @@ export default function Blog({ blog, highlightedBody }: BlogDetail) {
         <div className="m-auto w-full bg-gradient-to-b from-primary-content via-info to-neutral-content ">
           <div className="min-h-screen">
             <div className="py-20">
-              <div className="text-4xl font-extrabold tracking-wider text-center">
+              <div className="px-4 text-md md:text-4xl font-extrabold tracking-wider md:w-full md:text-center">
                 {blog.title}
               </div>
-              <div className="flex m-auto mt-5 w-28">
+              <div className="flex m-auto mt-2 px-4 md:px-0 md:mt-5 md:w-28">
                 <Moment className="text-xs text-gray-500" format="YYYY.MM.DD">
                   {blog.publishedAt}
                 </Moment>
                 <p className="text-xs text-gray-500">に公開</p>
               </div>
               {/*メインコンテンツ*/}  
-              <div className="flex justify-between px-10 mx-auto mt-12 max-w-7xl">
+              <div className="flex justify-between  md;px-10 mx-auto mt-4 md:mt-12 max-w-7xl">
                 {/*本文*/}
-                <div className="p-10 w-full rounded-xl shadow md:w-[calc(100%_-_288px)] bg-base-100">
+                <div className="p-4 md:p-10 w-full md:rounded-xl shadow md:w-[calc(100%_-_288px)] bg-base-100">
                   <div className="main-text" dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>
                 </div>
                 {/*サイド*/}

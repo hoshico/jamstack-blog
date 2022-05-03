@@ -1,8 +1,9 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="text-gray-600 body-font bg-blue-500">
+    <header className="text-gray-600 bg-blue-500 body-font">
       <div className="navbar bg-base-300">
         {/*<div className="flex-none">
           <button className="btn btn-square btn-ghost">
@@ -21,7 +22,7 @@ export default function Header() {
         </div>*/}
         <div className="flex-1">
           <Link href="/">
-            <a className="btn btn-ghost ml-5 normal-case text-3xl">
+            <a className="ml-5 text-3xl normal-case btn btn-ghost">
               <span className="text-primary">hoshi</span>code
             </a>
           </Link>

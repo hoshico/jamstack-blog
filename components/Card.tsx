@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Moment from 'react-moment';
@@ -12,10 +13,10 @@ export default function Card(props: Card) {
     <Link href={`/blog/${props.blog.id}`}>
       <a>
         <div
-          className="card w-full bg-base-100 shadow-xl"
+          className="w-full shadow-xl card bg-base-100"
           onMouseOver={() => setMouseOver(true)}
           onMouseLeave={() => setMouseOver(false)}>
-          <figure className="h-32 lg:h-40 overflow-hidden">
+          <figure className="overflow-hidden h-32 lg:h-40">
             <img
               className={
                 mouseOver
@@ -34,12 +35,12 @@ export default function Card(props: Card) {
             <Moment className="text-xs" format="YYYY/MM/DD">
               {props.blog.publishedAt}
             </Moment>
-            <h2 className="text-sm sm:text-md card-title">
+            <h2 className="text-sm card-title sm:text-md">
               {props.blog.title}
             </h2>
             {/* １ヶ月以内の投稿はNEWのバッジをつける */}
             {/*<div className="badge badge-secondary">NEW</div>*/}
-            <div className="card-actions justify-end">
+            <div className="justify-end card-actions">
               {props.blog.category ? (
                 props.blog.category.map(category => (
                   <div key={category.id} className="badge badge-outline">

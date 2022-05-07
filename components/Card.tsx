@@ -32,7 +32,7 @@ export default function Card(props: Card) {
                 alt="blogイメージ"
               />
             </figure>
-            <div className="card-body">
+            <div className="card-body h-[170px]">
               <Moment className="text-xs" format="YYYY/MM/DD">
                 {props.blog.publishedAt}
               </Moment>
@@ -41,7 +41,7 @@ export default function Card(props: Card) {
               </h2>
               {/* １ヶ月以内の投稿はNEWのバッジをつける */}
               {/*<div className="badge badge-secondary">NEW</div>*/}
-              <div className="justify-end card-actions">
+              <div className="justify-end card-actions mt-auto">
                 {props.blog.category ? (
                   props.blog.category.map(category => (
                     <div key={category.id} className="badge badge-outline">

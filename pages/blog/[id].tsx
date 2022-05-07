@@ -65,7 +65,6 @@ export const getStaticProps = async (context: any) => {
   const $ = cheerio.load(data.body);
   $("pre code").each((_, elm) => {
     const result = hljs.highlightAuto($(elm).text());
-    console.log($.html());    // ハイライト済みのHTML
     $(elm).html(result.value);
     $(elm).addClass("hljs");
   });

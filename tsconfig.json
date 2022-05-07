@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "libs/render-toc.js", "pages/_app.tsx"  ],
+, "libs/render-toc.js", "pages/_app.tsx", "libs/client.js"  ],
   "exclude": [
     "node_modules"
   ]

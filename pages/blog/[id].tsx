@@ -16,7 +16,6 @@ type BlogDetail = {
   highlightedBody?: any;
 };
 export default function Blog({ blog, highlightedBody }: BlogDetail) {
-  console.log(blog.body)
   const toc = renderToc(blog.body)
   return (
     <Layout>
@@ -58,7 +57,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
+// データをテンプレートに受け渡す部分の処理
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });

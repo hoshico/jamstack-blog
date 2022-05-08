@@ -6,14 +6,17 @@ import Layout from '../components/Layout';
 import Card from '../components/Card';
 import { Blog } from '../components/types/Blog';
 import { Category } from '../components/types/Category';
+import { Profile } from '../components/types/Profile';
 
-export type Props = {
+type Props = {
   blogs: Array<Blog>;
   category: Array<Category>;
+  profile: Array<Profile>;
 };
 
 
-export default function Home({ blogs, category }: Props) {
+export default function Home({ blogs, category, profile }: Props) {
+  console.log(profile);
   const [showBlogs, setShowBlogs] = useState(blogs);
   const selectCategory = (category: string) => {
     if (category === 'all') {
@@ -101,10 +104,12 @@ export default function Home({ blogs, category }: Props) {
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: 'blog' });
   const category = await client.get({ endpoint: 'category' });
+  const profile = await client.get({ endpoint: 'profile' });
   return {
     props: {
       blogs: data.contents,
       category: category.contents,
+      profile: profile.contents,
     },
   };
 };

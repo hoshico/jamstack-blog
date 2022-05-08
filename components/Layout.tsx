@@ -3,12 +3,13 @@ import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import { Profile } from './types/Profile';
 
 type LayoutProps = {
   children?: ReactNode;
   title?: string;
 }
-export default function Layout({ children, title = 'hoshicode' }: LayoutProps) {
+export default function Layout({ children, title = 'hoshicode'}: LayoutProps) {
   return (
     <div className="bg-gradient-to-br from-primary to-secondary ">
       <Head>

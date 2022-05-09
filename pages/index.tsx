@@ -15,8 +15,8 @@ type Props = {
 };
 
 
-export default function Home({ blogs, category, profile }: Props) {
-  console.log(profile);
+export default function Home({ blogs, category }: Props) {
+  //console.log(profile);
   const [showBlogs, setShowBlogs] = useState(blogs);
   const selectCategory = (category: string) => {
     if (category === 'all') {
@@ -104,12 +104,12 @@ export default function Home({ blogs, category, profile }: Props) {
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: 'blog' });
   const category = await client.get({ endpoint: 'category' });
-  const profile = await client.get({ endpoint: 'profile' });
+  //const profile = await client.get({ endpoint: 'profile' });
   return {
     props: {
       blogs: data.contents,
       category: category.contents,
-      profile: profile.contents,
+      //profile: profile.contents,
     },
   };
 };

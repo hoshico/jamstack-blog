@@ -7,7 +7,7 @@ export type Profile = {
     width: number;
   };
   name: string;
-  profile: string;
+  main: string;
   publishedAt: string;
   revisedAt: string;
   updatedAt?: string;

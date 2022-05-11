@@ -17,7 +17,7 @@ export default function About ({profile}: AboutProps) {
           ></Image>*/}
         </div>
         <div className="w-full mt-4">
-          <p>名前:{profile.name}</p>
+          <p>名前: {profile.name}</p>
           <p className="mt-4">{profile.main}</p>
           <a href="https://qiita.com/yasu-hoshi" className="block mt-4 text-md hover:opacity-75">qiitaでも投稿してます</a>
         </div>

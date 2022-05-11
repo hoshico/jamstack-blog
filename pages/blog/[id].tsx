@@ -1,5 +1,5 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-import { GetStaticPaths } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Moment from 'react-moment';
 import Layout from '../../components/Layout';
 import { client } from '../../libs/client';
@@ -10,6 +10,7 @@ import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../../components/TableOfContents';
 import type { Blog } from '../../components/types/Blog';
 import { Params } from 'next/dist/server/router';
+import { Props } from 'next/script';
 
 type BlogDetail = {
   blog: Blog;
@@ -52,7 +53,7 @@ export default function Blog({ blog, highlightedBody }: BlogDetail) {
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const data = await client.get({ endpoint: "blog" });
-
+  console.log(data.contents);
   const paths = data.contents.map((content: any) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };

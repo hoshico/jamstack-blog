@@ -7,6 +7,7 @@ import Card from '../components/Card';
 import { Blog } from '../components/types/Blog';
 import { Category } from '../components/types/Category';
 import { Profile } from '../components/types/Profile';
+import { GetStaticProps } from 'next';
 
 type Props = {
   blogs: Array<Blog>;
@@ -101,15 +102,13 @@ export default function Home({ blogs, category }: Props) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({ endpoint: 'blog' });
   const category = await client.get({ endpoint: 'category' });
-  //const profile = await client.get({ endpoint: 'profile' });
   return {
     props: {
       blogs: data.contents,
       category: category.contents,
-      //profile: profile.contents,
     },
   };
 };

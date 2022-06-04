@@ -9,14 +9,14 @@ import { Category } from '../components/types/Category';
 import { Profile } from '../components/types/Profile';
 import { GetStaticProps } from 'next';
 
-type Props = {
+type HomeProps = {
   blogs: Array<Blog>;
   category: Array<Category>;
   profile: Array<Profile>;
 };
 
 
-export default function Home({ blogs, category }: Props) {
+export default function Home({ blogs, category }: HomeProps) {
   //console.log(profile);
   const [showBlogs, setShowBlogs] = useState(blogs);
   const selectCategory = (category: string) => {

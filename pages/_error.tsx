@@ -1,11 +1,11 @@
 import { NextPage, NextPageContext } from 'next'
 import Error from 'next/error'
 
-interface Props {
+interface ErrorProps {
   statusCode?: number
 }
 
-const ErrorPage: NextPage<Props> = ({ statusCode }) => {
+const ErrorPage: NextPage<ErrorProps> = ({ statusCode }) => {
   return statusCode ? (
     <>
       <Error statusCode={statusCode}></Error>

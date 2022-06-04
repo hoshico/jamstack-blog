@@ -10,13 +10,12 @@ import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../../components/TableOfContents';
 import type { Blog } from '../../components/types/Blog';
 import { Params } from 'next/dist/server/router';
-import { Props } from 'next/script';
 
-type BlogDetail = {
+type BlogProps = {
   blog: Blog;
   highlightedBody?: any;
 };
-export default function Blog({ blog, highlightedBody }: BlogDetail) {
+export default function Blog({ blog, highlightedBody }: BlogProps) {
   const toc = renderToc(blog.body)
   return (
     <Layout>
@@ -59,7 +58,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 };
 
 // データをテンプレートに受け渡す部分の処理
-export const getStaticProps = async (context: any) => {
+export const getStaticProps: GetStaticProps = async (context: any) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
 

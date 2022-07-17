@@ -1,6 +1,5 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import { useState } from 'react';
-
 import { client } from '../libs/client';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
@@ -34,7 +33,7 @@ export default function Home({ blogs, category }: HomeProps) {
 
   return (
     <>
-      <Layout>
+      {/*<Layout>*/}
         <div className="flex justify-between sm:px-10 m-auto my-6 max-w-7xl">
           {/*記事エリア*/}
           <div className="p-1 w-full rounded-xl md:w-[calc(100%_-_288px)] bg-base-200">
@@ -97,7 +96,7 @@ export default function Home({ blogs, category }: HomeProps) {
             </ul>
           </div>
         </div>
-      </Layout>
+      {/*</Layout>*/}
     </>
   );
 }

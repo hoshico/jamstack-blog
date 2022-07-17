@@ -1,22 +1,17 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import { useState } from 'react';
 import { client } from '../libs/client';
-import Layout from '../components/Layout';
 import Card from '../components/Card';
 import { Blog } from '../components/types/Blog';
 import { Category } from '../components/types/Category';
-import { Profile } from '../components/types/Profile';
 import { GetStaticProps } from 'next';
 
 type HomeProps = {
   blogs: Array<Blog>;
   category: Array<Category>;
-  profile: Array<Profile>;
 };
 
-
 export default function Home({ blogs, category }: HomeProps) {
-  //console.log(profile);
   const [showBlogs, setShowBlogs] = useState(blogs);
   const selectCategory = (category: string) => {
     if (category === 'all') {

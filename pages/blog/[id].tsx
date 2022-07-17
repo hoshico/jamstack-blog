@@ -9,10 +9,11 @@ import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../../components/TableOfContents';
 import type { Blog } from '../../components/types/Blog';
 import { Params } from 'next/dist/server/router';
+import { ReactNode } from 'react';
 
 type BlogProps = {
   blog: Blog;
-  highlightedBody?: any;
+  highlightedBody?: string;
 };
 export default function Blog({ blog, highlightedBody }: BlogProps) {
   const toc = renderToc(blog.body);
@@ -36,7 +37,7 @@ export default function Blog({ blog, highlightedBody }: BlogProps) {
               <div className="p-4 md:p-10 w-full md:rounded-xl shadow md:w-[calc(100%_-_288px)] bg-base-100">
                 <div
                   className="main-text"
-                  dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>
+                  dangerouslySetInnerHTML={{ __html: highlightedBody || ""}}></div>
               </div>
               {/*サイド*/}
               <TableOfContents toc={toc} />
@@ -50,7 +51,6 @@ export default function Blog({ blog, highlightedBody }: BlogProps) {
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const data = await client.get({ endpoint: 'blog' });
-  console.log(data.contents);
   const paths = data.contents.map((content: any) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };

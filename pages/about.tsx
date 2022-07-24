@@ -16,7 +16,7 @@ export default function About({ profile }: AboutProps) {
         <a
           href="https://qiita.com/yasu-hoshi"
           className="block mt-4 text-md hover:opacity-75">
-          qiitaでも投稿してます
+          qiitaでも投稿してます。
         </a>
       </div>
     </div>

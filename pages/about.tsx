@@ -12,7 +12,7 @@ export default function About({ profile }: AboutProps) {
   return (
     <div className="w-4/5 mt-6 p-10 mx-auto bg-base-300 rounded-md">
       <div className="flex justify-center mb-2">
-        <Image src={profile.image.url} width={100} height={100} />
+        <Image src={profile.image.url} width={100} height={100}/>
       </div>
       <p className="text-center text-md font-bold">プロフィール</p>
       <div className="image-box relative w-20 mx-auto"></div>

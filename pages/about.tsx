@@ -8,7 +8,6 @@ type AboutProps = {
   profile: Profile;
 };
 export default function About({ profile }: AboutProps) {
-  console.log(profile.image.url);
   return (
     <div className="w-4/5 mt-6 p-10 mx-auto bg-base-300 rounded-md">
       <div className="flex justify-center mb-2">

@@ -6,7 +6,7 @@ import { Blog } from './types/Blog';
 
 type Card = {
   blog: Blog;
-}
+};
 export default function Card(props: Card) {
   const [mouseOver, setMouseOver] = useState(false);
   return (
@@ -17,7 +17,7 @@ export default function Card(props: Card) {
             className="w-full shadow-xl card bg-base-100"
             onMouseOver={() => setMouseOver(true)}
             onMouseLeave={() => setMouseOver(false)}>
-            <figure className="hidden md:block overflow-hidden h-[fit-content] md:h-32 lg:h-40">
+            <figure className="hidden md:block overflow-hidden h-[fit-content] md:h-36 lg:h-40">
               <img
                 className={
                   mouseOver
@@ -32,20 +32,20 @@ export default function Card(props: Card) {
                 alt="blogイメージ"
               />
             </figure>
-            <div className="card-body h-[170px]">
+            <div className="card-body p-4 h-[200px]">
               <Moment className="text-xs" format="YYYY/MM/DD">
                 {props.blog.publishedAt}
               </Moment>
               <h2 className="text-sm card-title sm:text-md">
                 {props.blog.title}
               </h2>
-              {/* １ヶ月以内の投稿はNEWのバッジをつける */}
+              {/* Todo: １ヶ月以内の投稿はNEWのバッジをつける */}
               {/*<div className="badge badge-secondary">NEW</div>*/}
               <div className="justify-end card-actions mt-auto">
                 {props.blog.category ? (
                   props.blog.category.map(category => (
                     <div key={category.id} className="badge badge-outline">
-                      <p >{category.name}</p>
+                      <p>{category.name}</p>
                     </div>
                   ))
                 ) : (

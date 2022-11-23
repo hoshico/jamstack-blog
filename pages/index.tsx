@@ -30,7 +30,7 @@ export default function Home({ blogs, category }: HomeProps) {
     <>
       <div className="flex justify-between sm:px-10 m-auto my-6 max-w-7xl">
         {/*記事エリア*/}
-        <div className="p-1 w-full rounded-xl md:w-[calc(100%_-_288px)] bg-base-200">
+        <div className="p-1 w-full rounded-xl lg:w-[calc(100%_-_288px)] bg-base-200">
           <div className="m-2 md:m-10">
             <div className="py-1">
               <ul className="grid grid-cols-1 gap-5  sm:grid-cols-2 lg:grid-cols-3">
@@ -50,7 +50,7 @@ export default function Home({ blogs, category }: HomeProps) {
           </div>
         </div>
         {/*カテゴリー*/}
-        <div className="hidden sticky top-10 py-10 px-2 w-[250px] h-[fit-content] rounded-xl shadow md:block bg-base-200">
+        <div className="hidden sticky top-10 py-10 px-2 w-[250px] h-[fit-content] rounded-xl shadow lg:block bg-base-200">
           <p className="pl-2 mb-5 font-bold">カテゴリー</p>
           <ul className="pl-6 list-disc">
             <li

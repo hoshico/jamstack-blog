@@ -13,4 +13,5 @@ module.exports = {
     themes: ["cmyk", "winter"],
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  darkMode: "class",
 }

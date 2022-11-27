@@ -1,7 +1,10 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Link from 'next/link';
+import { useDarkmode } from './hooks/useDarkMode';
 
 export default function Header() {
+  const { isDarkMode, toggle } = useDarkmode();
+
   return (
     <header className="text-gray-600 bg-blue-500 body-font">
       <div className="navbar bg-base-300">
@@ -13,7 +16,7 @@ export default function Header() {
           </Link>
           <div className="flex flex-col items-center ml-auto">
             <label className="swap swap-rotate">
-              <input type="checkbox" />
+              <input type="checkbox" onClick={() => toggle()}/>
               <svg
                 className="swap-on fill-current w-10 h-10"
                 xmlns="http://www.w3.org/2000/svg"

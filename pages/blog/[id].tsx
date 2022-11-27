@@ -19,18 +19,18 @@ export default function Blog({ blog, highlightedBody }: BlogProps) {
   const toc = renderToc(blog.body);
   return (
     <div data-theme="winter">
-      <div className="m-auto w-full bg-gradient-to-b from-primary-content via-info to-neutral-content ">
+      <div className="m-auto w-full bg-gradient-to-b from-primary-content via-info to-neutral-content dark:from-base-content dark:to-base-content">
         <div className="min-h-screen">
           <div className="py-20">
-            <div className="md:max-w-7xl mx-auto">
-              <div className="px-8 text-md md:text-4xl font-extrabold tracking-wider">
+            <div className="md:max-w-7xl mx-auto dark:text-base-100">
+              <div className="px-8 text-md md:text-4xl font-extrabold tracking-wider dark:">
                 {blog.title}
               </div>
               <div className="flex m-auto mt-5 px-8 md:px-0 md:w-28">
-                <Moment className="text-xs text-gray-500" format="YYYY.MM.DD">
+                <Moment className="text-xs text-gray-500 dark:text-base-100" format="YYYY.MM.DD">
                   {blog.publishedAt}
                 </Moment>
-                <p className="text-xs text-gray-500">に公開</p>
+                <p className="text-xs text-gray-500 dark:text-base-100">に公開</p>
               </div>
             </div>
             {/*メインコンテンツ*/}

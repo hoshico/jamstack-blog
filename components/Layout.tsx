@@ -10,7 +10,7 @@ type LayoutProps = {
 }
 export default function Layout({ children, title = 'hoshicode'}: LayoutProps) {
   return (
-    <div className="bg-gradient-to-br from-primary to-secondary ">
+    <div className="bg-gradient-to-br from-primary to-secondary dark:from-base-content dark:to-base-content">
       <Head>
         <title>{title}</title>
       </Head>

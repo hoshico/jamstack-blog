@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cText: #fcfaf2;
+  }
+}
 
 /* リッチエディタ内 */
 .main-text u {

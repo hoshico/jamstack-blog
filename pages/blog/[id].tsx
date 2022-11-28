@@ -9,7 +9,6 @@ import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../../components/TableOfContents';
 import type { Blog } from '../../components/types/Blog';
 import { Params } from 'next/dist/server/router';
-import { ReactNode } from 'react';
 
 type BlogProps = {
   blog: Blog;

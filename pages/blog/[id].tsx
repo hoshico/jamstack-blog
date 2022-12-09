@@ -17,6 +17,7 @@ type BlogProps = {
 export default function Blog({ blog, highlightedBody }: BlogProps) {
   const toc = renderToc(blog.body);
   return (
+    // Todo: 記事内もコンポーネント化
     <div data-theme="winter">
       <div className="m-auto w-full bg-gradient-to-b from-primary-content via-info to-neutral-content dark:from-base-content dark:to-base-content">
         <div className="min-h-screen">
@@ -35,9 +36,9 @@ export default function Blog({ blog, highlightedBody }: BlogProps) {
             {/*メインコンテンツ*/}
             <div className="flex justify-between  md:px-10 mx-auto mt-4 md:mt-12 max-w-7xl">
               {/*本文*/}
-              <div className="px-8 py-4 md:p-10 w-full md:rounded-xl shadow md:w-[calc(100%_-_288px)] bg-base-100">
+              <div className="px-8 py-4 md:p-10 w-full md:rounded-xl shadow md:w-[calc(100%_-_288px)] bg-base-100 dark:text-base-100 dark:bg-slate-800">
                 <div
-                  className="main-text"
+                  className="main-text "
                   dangerouslySetInnerHTML={{
                     __html: highlightedBody || '',
                   }}></div>

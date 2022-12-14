@@ -5,15 +5,16 @@ type Props = (isDark?: boolean) => {
   toggle: (isDark?: boolean) => void;
 };
 
-export const useDarkmode: Props = (isInitiaDark = false) => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(isInitiaDark);
+// クラス名の切り替えのみを行う
+export const useSimpleDarkmode: Props = (isInitiaDark = false) => {
+  const [ isDarkMode, toggleTheme ] = useState<boolean>(isInitiaDark);
 
   const toggle = useCallback((isDark?: boolean) => {
     if (typeof isDark === 'undefined') {
-      setIsDarkMode(pre => !pre);
+      toggleTheme(pre => !pre);
       return;
     }
-    setIsDarkMode(isDark);
+    toggleTheme(isDark);
   }, []);
 
   useEffect(() => {

@@ -10,7 +10,7 @@ export default function Header() {
       <div className="navbar bg-base-300">
         <div className="flex-1">
           <Link href="/">
-            <a className="ml-2 md:ml-5 text-3xl normal-case btn btn-ghost">
+            <a className="ml-2 md:ml-5 text-3xl normal-case btn-ghost">
               <span className="text-primary">hoshi</span>code
             </a>
           </Link>

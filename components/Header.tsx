@@ -1,5 +1,4 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-import { is } from 'cheerio/lib/api/traversing';
 import Link from 'next/link';
 import { useSaveTheme } from './hooks/useSaveTheme';
 
@@ -16,7 +15,10 @@ export default function Header() {
           </Link>
           <div className="flex flex-col items-center ml-auto">
             <label className="swap swap-rotate">
-              <input type="checkbox" onClick={() => presistToggle(!isDarkMode)}/>
+              <input
+                type="checkbox"
+                onClick={() => presistToggle(!isDarkMode)}
+              />
               <svg
                 className="swap-on fill-current w-10 h-10"
                 xmlns="http://www.w3.org/2000/svg"

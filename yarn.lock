@@ -1605,10 +1605,10 @@
   resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.6.1.tgz#913d3a68c5cbc1124fdb18eff919432f7b6abdde"
   integrity sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==
 
-"@react-three/drei@^9.48.4":
-  version "9.48.4"
-  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-9.48.4.tgz#f58b57244053c8b7f70bf8a4ae586abdbd621b26"
-  integrity sha512-p4M5Pp/+WivIlz+oJMaTC9yz4CvCVB2A0Mewa49btW4ofV2jHwYtkQlNZq1WcxY0Bp0/RQPC1Qq+birWQOOfTA==
+"@react-three/drei@^9.50.3":
+  version "9.50.3"
+  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-9.50.3.tgz#adf8ee11aae272b93ab204f797aaefb2480062e8"
+  integrity sha512-Px6kjbPbX9JfF7OK+Nobt7hwQ8slSsvvoao36awZtIhmM9O+AxCBGohFTMqOPiXxFIt7rsnyKtYlC+s993lJnA==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@react-spring/three" "^9.3.1"
@@ -1629,10 +1629,10 @@
     utility-types "^3.10.0"
     zustand "^3.5.13"
 
-"@react-three/fiber@^8.9.2":
-  version "8.9.2"
-  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-8.9.2.tgz#8a4ea350f057c53850097bd095280924d653bb13"
-  integrity sha512-uhDQvxUZ0M2SU/gAtY2tcEaa+Pp9JSDmSzm7Dw6q9/KMReqcImNLjPzkjVsWV5DKP7fELC6c4Bgs9sVIahM6LQ==
+"@react-three/fiber@^8.10.0":
+  version "8.10.0"
+  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-8.10.0.tgz#bf979bc98184fb24724720de519b6b3918200fe5"
+  integrity sha512-veyvW9clPjS0oQ4g8e2E8yW3v8C2wcXhJp3VyTgjzhpKYAL0xq0+aiofHdpNjx/CiqlR25mYyFky6HskWP3B5w==
   dependencies:
     "@babel/runtime" "^7.17.8"
     "@types/react-reconciler" "^0.26.7"
@@ -2872,10 +2872,10 @@
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.8.tgz#b94a4391c85666c7b73299fd3ad79d4faa435310"
   integrity sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==
 
-"@types/three@^0.147.0":
-  version "0.147.0"
-  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.147.0.tgz#b49a765344a0949ee99fc9bd5381fb55655200e2"
-  integrity sha512-IW1P10dhUym3B6wamVqohCYS/BqzT4XYNhRCI8NLfm6mXPrgfm70G6d2E15OdbBmXNdd5yewYWtL/+aClljNvA==
+"@types/three@^0.147.1":
+  version "0.147.1"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.147.1.tgz#f81e6dfaeafee1f4b5d825e036decfa801f83097"
+  integrity sha512-1dGYrF9E7frAXu3CRUYtTFj97PlA/Q0OedDQBROn3fKjtKXNhXc6/VNgkGod3axJMeNPNFDa6ur9eOcQ+aD0zw==
   dependencies:
     "@types/webxr" "*"
 

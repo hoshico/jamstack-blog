@@ -11,9 +11,10 @@ export default function Model(props) {
   return (
     <group {...props} dispose={null}>
       <group
-        position={[-0.66, -1.68, -8.19]}
-        rotation={[-Math.PI, 0, -Math.PI]}
-        scale={[-6.98, -0.82, -4.89]}
+        position={[-0.66, -0.68, -8.19]}
+        //rotation={[-Math.PI, 0, -Math.PI]}
+        rotation={[-Math.PI, 0.8, -Math.PI]}
+        scale={[-5.98, -0.52, -4.89]}
         //scale={[-0.98, -0.082, -2.89]}
       >
         <mesh

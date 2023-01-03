@@ -20,7 +20,7 @@ const Rig = ({ v = new Vector3() }) => {
 
 export default function About({ profile }: AboutProps) {
   return (
-    <div className="w-4/5 mt-6 p-10 mx-auto bg-base-300 rounded-md">
+    <div className="w-full mt-6 p-10 mx-auto rounded-md">
       <div className="h-[200px]">
         <Canvas>
           <ambientLight />
@@ -28,19 +28,18 @@ export default function About({ profile }: AboutProps) {
           <Rig />
           <pointLight position={[10, 10, 10]} />
           <Text
-            position={[0, 1, 0]}
+            position={[0, 3, 0]}
             font="/Roboto-Black.ttf"
             fontSize={3}
-            color={'#222'}>
+            color={'#fff'}>
             Profile
           </Text>
         </Canvas>
       </div>
-      <div className="image-box relative w-20 mx-auto"></div>
-      <div className="w-full mt-4">
-        <p>name: Hoshi</p>
-        <p className="mt-4">東京在住の駆け出しエンジニア。</p>
-        <p>好きなもの: 銭湯/MLB</p>
+      <div className="w-full">
+        <p className='text-white text-xl'>name: Hoshi</p>
+        <p className="mt-4 text-white text-xl">東京在住の駆け出しエンジニア。</p>
+        <p className="mt-4 text-white text-xl" >好きなもの: 銭湯/MLB</p>
       </div>
     </div>
   );

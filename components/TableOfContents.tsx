@@ -12,7 +12,7 @@ export default function TableOfContents({toc}: TocProps) {
       <p className="pl-2 mb-5 font-bold">目次</p>
       <ul className="pl-6 list-disc">
         {toc.map(data => (
-          <li className="mb-2 font-bold opacity-70 hover:opacity-100" key={data.id}>
+          <li className="list-none mb-2 font-bold opacity-70 hover:opacity-100" key={data.id}>
             <a href={`#${data.id}`}>
               {data.text}
             </a>

@@ -13,9 +13,12 @@ type AboutProps = {
   profile: Profile;
 };
 const Rig = ({ v = new Vector3() }) => {
-  return useFrame((state) => {
-    state.camera.position.lerp(v.set(state.mouse.x / 2, state.mouse.y / 2, 10), 0.05)
-  })
+  return useFrame(state => {
+    state.camera.position.lerp(
+      v.set(state.mouse.x / 2, state.mouse.y / 2, 10),
+      0.05,
+    );
+  });
 };
 
 export default function About({ profile }: AboutProps) {
@@ -37,18 +40,12 @@ export default function About({ profile }: AboutProps) {
         </Canvas>
       </div>
       <div className="w-full">
-        <p className='text-white text-xl'>name: Hoshi</p>
-        <p className="mt-4 text-white text-xl">東京在住の駆け出しエンジニア。</p>
-        <p className="mt-4 text-white text-xl" >好きなもの: 銭湯/MLB</p>
+        <p className="text-white text-xl">name: Hoshi</p>
+        <p className="mt-4 text-white text-xl">
+          東京在住の駆け出しエンジニア。
+        </p>
+        <p className="mt-4 text-white text-xl">好きなもの: 銭湯/MLB</p>
       </div>
     </div>
   );
 }
-export const getStaticProps: GetStaticProps = async () => {
-  const profile = await client.get({ endpoint: 'profile' });
-  return {
-    props: {
-      profile: profile,
-    },
-  };
-};

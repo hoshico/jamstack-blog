@@ -6,7 +6,7 @@ import cheerio from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/hybrid.css';
 import { renderToc } from '../../libs/render-toc';
-import TableOfContents from '../../components/TableOfContents';
+import TableOfContents from '../../components/top/TableOfContents';
 import type { Blog } from '../../components/types/Blog';
 import { Params } from 'next/dist/server/router';
 

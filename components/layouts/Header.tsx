@@ -1,6 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Link from 'next/link';
-import { useSaveTheme } from './hooks/useSaveTheme';
+import { useSaveTheme } from '../hooks/useSaveTheme';
 
 export default function Header() {
   const { isDarkMode, presistToggle } = useSaveTheme();

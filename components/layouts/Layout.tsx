@@ -7,17 +7,15 @@ import Header from './Header';
 type LayoutProps = {
   children?: ReactNode;
   title?: string;
-}
-export default function Layout({ children, title = 'hoshicode'}: LayoutProps) {
+};
+export default function Layout({ children, title = 'hoshicode' }: LayoutProps) {
   return (
     <div className="bg-gradient-to-br from-primary to-secondary dark:from-base-content dark:to-base-content">
       <Head>
         <title>{title}</title>
       </Head>
       <Header />
-      <main className='min-h-screen'>
-        {children}
-      </main>
+      <main className="min-h-screen">{children}</main>
       <Footer />
     </div>
   );

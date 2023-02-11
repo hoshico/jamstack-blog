@@ -1,6 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import { Profile } from '../../components/types/Profile';
-import Bath from '../../components/Bath';
+import Bath from './Bath';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 // 「Vector3」のインポートを追加

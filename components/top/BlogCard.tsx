@@ -21,7 +21,7 @@ const BlogCard = (props: BlogCard) => {
             }
             onMouseOver={() => setMouseOver(true)}
             onMouseLeave={() => setMouseOver(false)}>
-            <figure className="hidden md:block overflow-hidden h-[fit-content] md:h-36 lg:h-40">
+            <figure className="hidden md:block overflow-hidden h-[fit-content] md:h-36 lg:h-38">
               <img
                 className="hidden sm:block object-cover w-full md:h-full transition"
                 src={

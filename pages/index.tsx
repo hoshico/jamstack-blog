@@ -1,7 +1,7 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import { useState } from 'react';
 import { client } from '../libs/client';
-import Card from '../components/Card';
+import Card from '../components/top/BlogCard';
 import { Blog } from '../components/types/Blog';
 import { Category } from '../components/types/Category';
 import { GetStaticProps } from 'next';
@@ -19,7 +19,7 @@ export default function Home({ blogs, category }: HomeProps) {
     } else {
       // カテゴリーを持つ記事を選択
       const selectBlogs = blogs.filter(blog => {
-        const haveCategory = blog.category.map((category) => category.name);
+        const haveCategory = blog.category.map(category => category.name);
         return haveCategory.includes(category);
       });
       setShowBlogs(selectBlogs);
@@ -79,7 +79,7 @@ export default function Home({ blogs, category }: HomeProps) {
                   className="flex items-center mb-3 hover:opacity-60 cursor-pointer"
                   onClick={() => selectCategory(category.name)}>
                   <div className="mr-4 w-8 mask mask-squircle">
-                    <img src={category.image.url} alt=""/>
+                    <img src={category.image.url} alt="" />
                   </div>
                   <p>{category.name}</p>
                 </li>

@@ -1,17 +1,11 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import { Profile } from '../components/types/Profile';
-import { client } from '../libs/client';
-import Bath from '../components/Bath';
+import { Profile } from '../../components/types/Profile';
+import Bath from '../../components/Bath';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 // 「Vector3」のインポートを追加
 import { Mesh, Vector3 } from 'three';
 
-type AboutProps = {
-  profile: Profile;
-};
 const Rig = ({ v = new Vector3() }) => {
   return useFrame(state => {
     state.camera.position.lerp(
@@ -21,7 +15,7 @@ const Rig = ({ v = new Vector3() }) => {
   });
 };
 
-export default function About({ profile }: AboutProps) {
+const AboutDetail = () => {
   return (
     <div className="w-full mt-6 p-10 mx-auto rounded-md">
       <div className="h-[200px]">
@@ -48,4 +42,6 @@ export default function About({ profile }: AboutProps) {
       </div>
     </div>
   );
-}
+};
+
+export default AboutDetail;

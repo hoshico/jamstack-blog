@@ -6,10 +6,8 @@ export type Category = {
     height: number;
     width: number;
   };
-  name: categoryName;
+  name: string;
   publishedAt: string;
   revisedAt: string;
   updatedAt?: string;
 };
-
-export type categoryName = 'JavaScript' | 'TypeScript' | 'Next.js' | 'React';

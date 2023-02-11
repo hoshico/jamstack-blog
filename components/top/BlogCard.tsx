@@ -2,12 +2,12 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Moment from 'react-moment';
-import { Blog } from './types/Blog';
+import { Blog } from '../types/Blog';
 
 type Card = {
   blog: Blog;
 };
-export default function Card(props: Card) {
+const BlogCard = (props: Card) => {
   const [mouseOver, setMouseOver] = useState(false);
   return (
     <>
@@ -59,3 +59,5 @@ export default function Card(props: Card) {
     </>
   );
 }
+
+export default BlogCard;

@@ -4,26 +4,26 @@ import React, { useState } from 'react';
 import Moment from 'react-moment';
 import { Blog } from '../types/Blog';
 
-type Card = {
+type BlogCard = {
   blog: Blog;
 };
-const BlogCard = (props: Card) => {
+const BlogCard = (props: BlogCard) => {
   const [mouseOver, setMouseOver] = useState(false);
   return (
     <>
       <Link href={`/blog/${props.blog.id}`}>
         <a>
           <div
-            className="w-full shadow-xl card bg-base-100"
+            className={
+              mouseOver
+                ? 'w-full shadow-xl card bg-base-100 scale-105 transition duration-300'
+                : 'w-full shadow-xl card bg-base-100 duration-300'
+            }
             onMouseOver={() => setMouseOver(true)}
             onMouseLeave={() => setMouseOver(false)}>
             <figure className="hidden md:block overflow-hidden h-[fit-content] md:h-36 lg:h-40">
               <img
-                className={
-                  mouseOver
-                    ? 'hidden sm:block object-cover w-full md:h-full scale-110 transition'
-                    : 'hidden sm:block object-cover w-full md:h-full transition'
-                }
+                className="hidden sm:block object-cover w-full md:h-full transition"
                 src={
                   props.blog.photo
                     ? props.blog.photo.url
@@ -58,6 +58,6 @@ const BlogCard = (props: Card) => {
       </Link>
     </>
   );
-}
+};
 
 export default BlogCard;

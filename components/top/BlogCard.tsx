@@ -21,7 +21,7 @@ const BlogCard = (props: BlogCard) => {
             onMouseOver={() => setMouseOver(true)}
             onMouseLeave={() => setMouseOver(false)}
           >
-            <figure className="lg:h-38 hidden h-[fit-content] overflow-hidden md:block md:h-36">
+            <figure className="hidden h-[fit-content] overflow-hidden md:block md:h-36">
               <img
                 className="hidden w-full object-cover transition sm:block md:h-full"
                 src={
@@ -39,9 +39,7 @@ const BlogCard = (props: BlogCard) => {
               >
                 {props.blog.publishedAt}
               </Moment>
-              <h2 className="sm:text-md card-title text-sm">
-                {props.blog.title}
-              </h2>
+              <h2 className="card-title text-sm">{props.blog.title}</h2>
               {/* Todo: １ヶ月以内の投稿はNEWのバッジをつける */}
               {/*<div className="badge badge-secondary">NEW</div>*/}
               <div className="card-actions mt-auto justify-end">

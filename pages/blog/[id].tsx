@@ -22,7 +22,7 @@ export default function Blog({ blog, highlightedBody }: BlogProps) {
         <div className="min-h-screen">
           <div className="py-20">
             <div className="mx-auto dark:text-base-100 md:max-w-7xl">
-              <div className="text-md dark: px-8 font-extrabold tracking-wider md:text-4xl">
+              <div className="font-extrabold tracking-wider dark:px-8 md:text-4xl">
                 {blog.title}
               </div>
               <div className="m-auto mt-5 flex px-8 md:w-28 md:px-0">

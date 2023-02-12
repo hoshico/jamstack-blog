@@ -1,8 +1,5 @@
 const BlogDetail = () => {
-  return (
-    <></>
-  )
+  return <></>;
 };
 
 export default BlogDetail;
-

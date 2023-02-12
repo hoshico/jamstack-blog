@@ -18,9 +18,9 @@ export const useSaveTheme: UseDarkMode = () => {
    * setValue("value")でkey: valueをsetできる
    */
   const [value, setValue] =
-    useLocalStorage<typeof Theme['Dark' | 'Light']>('theme');
+    useLocalStorage<(typeof Theme)['Dark' | 'Light']>('theme');
   const { isDarkMode, toggle } = useSimpleDarkmode();
-  
+
   // Todo: isDarkにundefinedが入る
   const presistToggle = (isDark: boolean) => {
     toggle(isDark);

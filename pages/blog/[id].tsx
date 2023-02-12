@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Moment from 'react-moment';
 import { client } from '../../libs/client';
@@ -22,26 +21,32 @@ export default function Blog({ blog, highlightedBody }: BlogProps) {
       <div className="m-auto w-full bg-gradient-to-b from-primary-content via-info to-neutral-content dark:from-base-content dark:to-base-content">
         <div className="min-h-screen">
           <div className="py-20">
-            <div className="md:max-w-7xl mx-auto dark:text-base-100">
-              <div className="px-8 text-md md:text-4xl font-extrabold tracking-wider dark:">
+            <div className="mx-auto dark:text-base-100 md:max-w-7xl">
+              <div className="text-md dark: px-8 font-extrabold tracking-wider md:text-4xl">
                 {blog.title}
               </div>
-              <div className="flex m-auto mt-5 px-8 md:px-0 md:w-28">
-                <Moment className="text-xs text-gray-500 dark:text-base-100" format="YYYY.MM.DD">
+              <div className="m-auto mt-5 flex px-8 md:w-28 md:px-0">
+                <Moment
+                  className="text-xs text-gray-500 dark:text-base-100"
+                  format="YYYY.MM.DD"
+                >
                   {blog.publishedAt}
                 </Moment>
-                <p className="text-xs text-gray-500 dark:text-base-100">に公開</p>
+                <p className="text-xs text-gray-500 dark:text-base-100">
+                  に公開
+                </p>
               </div>
             </div>
             {/*メインコンテンツ*/}
-            <div className="flex justify-between  md:px-10 mx-auto mt-4 md:mt-12 max-w-7xl">
+            <div className="mx-auto mt-4  flex max-w-7xl justify-between md:mt-12 md:px-10">
               {/*本文*/}
-              <div className="px-8 py-4 md:p-10 w-full md:rounded-xl shadow md:w-[calc(100%_-_288px)] bg-base-100 dark:text-base-100 dark:bg-slate-800">
+              <div className="w-full bg-base-100 px-8 py-4 shadow dark:bg-slate-800 dark:text-base-100 md:w-[calc(100%_-_288px)] md:rounded-xl md:p-10">
                 <div
                   className="main-text "
                   dangerouslySetInnerHTML={{
                     __html: highlightedBody || '',
-                  }}></div>
+                  }}
+                ></div>
               </div>
               {/*サイド*/}
               <TableOfContents toc={toc} />

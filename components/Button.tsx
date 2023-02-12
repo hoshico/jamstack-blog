@@ -13,7 +13,10 @@ export const Button = (props: Props) => {
   const { label, onClick, className } = props;
 
   return (
-    <button className={className} onClick={onClick}>
+    <button
+      className={className}
+      onClick={onClick}
+    >
       {label}
     </button>
   );

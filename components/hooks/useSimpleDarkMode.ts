@@ -7,11 +7,11 @@ type Props = (isDark?: boolean) => {
 
 // クラス名の切り替えのみを行う
 export const useSimpleDarkmode: Props = (isInitiaDark = false) => {
-  const [ isDarkMode, toggleTheme ] = useState<boolean>(isInitiaDark);
+  const [isDarkMode, toggleTheme] = useState<boolean>(isInitiaDark);
 
   const toggle = useCallback((isDark?: boolean) => {
     if (typeof isDark === 'undefined') {
-      toggleTheme(pre => !pre);
+      toggleTheme((pre) => !pre);
       return;
     }
     toggleTheme(isDark);

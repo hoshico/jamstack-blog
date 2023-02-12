@@ -8,13 +8,14 @@ type TocProps = {
 };
 export default function TableOfContents({ toc }: TocProps) {
   return (
-    <div className="hidden sticky top-10 py-10 px-2 w-[250px] h-[fit-content] rounded-xl shadow md:block bg-base-100">
-      <p className="pl-2 mb-5 font-bold">目次</p>
-      <ul className="pl-6 list-disc">
-        {toc.map(data => (
+    <div className="sticky top-10 hidden h-[fit-content] w-[250px] rounded-xl bg-base-100 py-10 px-2 shadow md:block">
+      <p className="mb-5 pl-2 font-bold">目次</p>
+      <ul className="list-disc pl-6">
+        {toc.map((data) => (
           <li
-            className="list-none mb-2 font-bold opacity-70 hover:opacity-100"
-            key={data.id}>
+            className="mb-2 list-none font-bold opacity-70 hover:opacity-100"
+            key={data.id}
+          >
             <a href={`#${data.id}`}>{data.text}</a>
           </li>
         ))}

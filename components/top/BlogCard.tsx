@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Moment from 'react-moment';
@@ -16,14 +15,15 @@ const BlogCard = (props: BlogCard) => {
           <div
             className={
               mouseOver
-                ? 'w-full shadow-xl card bg-base-100 scale-105 transition duration-300'
-                : 'w-full shadow-xl card bg-base-100 duration-300'
+                ? 'card w-full scale-105 bg-base-100 shadow-xl transition duration-300'
+                : 'card w-full bg-base-100 shadow-xl duration-300'
             }
             onMouseOver={() => setMouseOver(true)}
-            onMouseLeave={() => setMouseOver(false)}>
-            <figure className="hidden md:block overflow-hidden h-[fit-content] md:h-36 lg:h-38">
+            onMouseLeave={() => setMouseOver(false)}
+          >
+            <figure className="lg:h-38 hidden h-[fit-content] overflow-hidden md:block md:h-36">
               <img
-                className="hidden sm:block object-cover w-full md:h-full transition"
+                className="hidden w-full object-cover transition sm:block md:h-full"
                 src={
                   props.blog.photo
                     ? props.blog.photo.url
@@ -32,19 +32,25 @@ const BlogCard = (props: BlogCard) => {
                 alt="blogイメージ"
               />
             </figure>
-            <div className="card-body p-4 h-[200px]">
-              <Moment className="text-xs" format="YYYY/MM/DD">
+            <div className="card-body h-[200px] p-4">
+              <Moment
+                className="text-xs"
+                format="YYYY/MM/DD"
+              >
                 {props.blog.publishedAt}
               </Moment>
-              <h2 className="text-sm card-title sm:text-md">
+              <h2 className="sm:text-md card-title text-sm">
                 {props.blog.title}
               </h2>
               {/* Todo: １ヶ月以内の投稿はNEWのバッジをつける */}
               {/*<div className="badge badge-secondary">NEW</div>*/}
-              <div className="justify-end card-actions mt-auto">
+              <div className="card-actions mt-auto justify-end">
                 {props.blog.category ? (
-                  props.blog.category.map(category => (
-                    <div key={category.id} className="badge badge-outline">
+                  props.blog.category.map((category) => (
+                    <div
+                      key={category.id}
+                      className="badge badge-outline"
+                    >
                       <p>{category.name}</p>
                     </div>
                   ))

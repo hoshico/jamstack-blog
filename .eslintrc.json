@@ -7,6 +7,7 @@
   ],
   "plugins": ["tailwindcss"],
   "rules": {
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "tailwindcss/no-custom-classname": "off"
   }
 }

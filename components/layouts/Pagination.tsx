@@ -17,7 +17,7 @@ export const Pagination = (props: Props) => {
       {range(1, Math.ceil(totalCount / per_page)).map((number, index) => (
         <button
           key={index}
-          className="btn btn-xs"
+          className="btn btn-xl"
         >
           {number}
         </button>

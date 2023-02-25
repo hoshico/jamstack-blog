@@ -16,29 +16,40 @@ const Rig = ({ v = new Vector3() }) => {
 const AboutDetail = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-300 to-cyan-800 py-8 px-12">
-      <div className="mx-auto w-full rounded-md bg-gray-400 p-10">
-        <div className="h-[200px]">
-          <Canvas>
-            <ambientLight />
-            <Bath position={[0, -2, 5]} />
-            <Rig />
-            <pointLight position={[10, 10, 10]} />
-            <Text
-              position={[0, 3, 0]}
-              font="/Roboto-Black.ttf"
-              fontSize={3}
-              color={'#fff'}
-            >
-              Profile
-            </Text>
-          </Canvas>
+      {/*プロフィール背景*/}
+      <div className="mx-auto w-full rounded-md bg-stone-800/60">
+        {/*プロフィールヘッダー*/}
+        <div className="w-16">
+          <div className="buttonArea grid grid-cols-3 gap-4 p-3">
+            <div className="circle h-3 w-3 rounded-full bg-red-500"></div>
+            <div className="circle h-3 w-3 rounded-full bg-yellow-500"></div>
+            <div className="circle h-3 w-3 rounded-full bg-green-500"></div>
+          </div>
         </div>
-        <div className="w-full">
-          <p className="text-xl text-white">name: Hoshi</p>
-          <p className="mt-4 text-xl text-white">
-            東京在住の駆け出しエンジニア。
-          </p>
-          <p className="mt-4 text-xl text-white">好きなもの: 銭湯/MLB</p>
+        <div className="content p-10">
+          <div className="h-[200px]">
+            <Canvas>
+              <ambientLight />
+              <Bath position={[0, -2, 5]} />
+              <Rig />
+              <pointLight position={[10, 10, 10]} />
+              <Text
+                position={[0, 3, 0]}
+                font="/Roboto-Black.ttf"
+                fontSize={3}
+                color={'#fff'}
+              >
+                Profile
+              </Text>
+            </Canvas>
+          </div>
+          <div className="w-full">
+            <p className="text-xl text-white">name: Hoshi</p>
+            <p className="mt-4 text-xl text-white">
+              東京在住の駆け出しエンジニア。
+            </p>
+            <p className="mt-4 text-xl text-white">好きなもの: 銭湯/MLB</p>
+          </div>
         </div>
       </div>
     </div>

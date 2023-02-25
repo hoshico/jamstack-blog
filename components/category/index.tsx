@@ -27,7 +27,7 @@ const CategoryTable = (props: Props) => {
       <p className="mb-5 pl-2 font-bold">カテゴリー</p>
       <ul className="list-disc pl-6">
         <li
-          className="mb-3 flex cursor-pointer items-center hover:opacity-60"
+          className="mb-3 flex cursor-pointer items-center text-white hover:opacity-60"
           onClick={() => selectCategory('all')}
         >
           <div className="mask mask-squircle mr-4 w-8">
@@ -46,7 +46,7 @@ const CategoryTable = (props: Props) => {
               ></path>
             </svg>
           </div>
-          <p>ALL</p>
+          <p className='text-black'>ALL</p>
         </li>
         {category.length ? (
           category.map((category) => (

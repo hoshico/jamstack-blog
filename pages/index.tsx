@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { client } from '../libs/client';
 import Card from '../components/top/BlogCard';
 import { Blog } from '../components/types/Blog';
-import { Category } from '../components/types/Category';
+
 import { GetStaticProps } from 'next';
+import { Category } from '../components/types/Category';
+import CategoryTable from '../components/category';
 
 type HomeProps = {
   blogs: Array<Blog>;
@@ -12,18 +14,6 @@ type HomeProps = {
 
 export default function Home({ blogs, category }: HomeProps) {
   const [showBlogs, setShowBlogs] = useState(blogs);
-  const selectCategory = (category: string) => {
-    if (category === 'all') {
-      setShowBlogs(blogs);
-    } else {
-      // カテゴリーを持つ記事を選択
-      const selectBlogs = blogs.filter((blog) => {
-        const haveCategory = blog.category.map((category) => category.name);
-        return haveCategory.includes(category);
-      });
-      setShowBlogs(selectBlogs);
-    }
-  };
 
   return (
     <>
@@ -49,7 +39,12 @@ export default function Home({ blogs, category }: HomeProps) {
           </div>
         </div>
         {/*カテゴリー*/}
-        <div className="sticky top-10 hidden h-[fit-content] w-[250px] rounded-xl bg-base-200 py-10 px-2 shadow lg:block">
+        <CategoryTable
+          blogs={blogs}
+          category={category}
+          setShowBlogs={setShowBlogs}
+        />
+        {/*<div className="sticky top-10 hidden h-[fit-content] w-[250px] rounded-xl bg-base-200 py-10 px-2 shadow lg:block">
           <p className="mb-5 pl-2 font-bold">カテゴリー</p>
           <ul className="list-disc pl-6">
             <li
@@ -94,7 +89,7 @@ export default function Home({ blogs, category }: HomeProps) {
               <p>投稿がありません</p>
             )}
           </ul>
-        </div>
+        </div>*/}
       </div>
     </>
   );

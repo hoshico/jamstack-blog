@@ -4,8 +4,8 @@ import { useSaveTheme } from '../hooks/useSaveTheme';
 export default function Header() {
   const { isDarkMode, presistToggle } = useSaveTheme();
   return (
-    <header className="bg-blue-500 text-gray-600">
-      <div className="navbar bg-base-300">
+    <header className="bg-base-300 text-gray-600">
+      <div className="navbar mx-auto lg:w-8/12">
         <div className="flex-1">
           <Link href="/">
             <a className="btn-ghost ml-2 text-3xl normal-case md:ml-5">

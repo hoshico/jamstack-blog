@@ -18,7 +18,7 @@ export default function Home({ blogs, category }: HomeProps) {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-primary to-secondary py-6 dark:from-base-content dark:to-base-content sm:px-10">
-        <div className="mx-auto flex w-11/12 justify-between lg:w-8/12">
+        <div className="mx-auto flex w-11/12 justify-between 2xl:w-8/12">
           {/*記事エリア*/}
           <div className="w-full rounded-xl bg-base-200 p-1 lg:w-[calc(100%_-_288px)]">
             <div className="m-4 md:m-10">

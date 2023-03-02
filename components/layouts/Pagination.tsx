@@ -1,27 +1,33 @@
-import Link from 'next';
+import Link from 'next/link';
 
 type Props = {
-  totalCount: number;
+  maxPageValue: number;
+  currentPageValue: number;
 };
 
 export const Pagination = (props: Props) => {
-  const { totalCount } = props;
-  const per_page = 6;
+  const { maxPageValue, currentPageValue } = props;
 
-  const range = (start: number, end: number) => {
-    return [...Array(end - start + 1)].map((_, i) => start + i);
-  };
+  const maxPageNumber = Number(maxPageValue);
+  const currentPageNumber = Number(currentPageValue);
+
+  const prevPage = currentPageNumber - 1;
+  const nextPage = currentPageNumber + 1;
 
   return (
-    <div className="btn-group">
-      {range(1, Math.ceil(totalCount / per_page)).map((number, index) => (
-        <button
-          key={index}
-          className="btn btn-xl"
-        >
-          {number}
-        </button>
-      ))}
+    <div className="flex px-3 py-12">
+      {currentPageNumber !== 1 && (
+        <div>
+          <Link href={`/blog/pages/${prevPage}`}>
+            <a>Previous</a>
+          </Link>
+        </div>
+      )}
+      {currentPageNumber !== maxPageNumber && (
+        <Link href={`/blog/pages/${nextPage}`}>
+          <a>Next</a>
+        </Link>
+      )}
     </div>
   );
 };

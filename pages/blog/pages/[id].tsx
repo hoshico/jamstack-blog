@@ -1,22 +1,17 @@
 import { useState } from 'react';
-import { client } from '../libs/client';
-import Card from '../components/top/BlogCard';
-import { Blog } from '../components/types/Blog';
+import CategoryTable from '../../../components/category';
+import Card from '../../../components/top/BlogCard';
+import { Pagination } from '../../../components/layouts/Pagination';
+import { HomeProps } from '../..';
+import { client } from '../../../libs/client';
 
-import { GetStaticProps } from 'next';
-import { Category } from '../components/types/Category';
-import CategoryTable from '../components/category';
-import { Pagination } from '../components/layouts/Pagination';
-
-export type HomeProps = {
-  blogs: Array<Blog>;
-  category: Array<Category>;
-  totalCount: number;
-};
-
-export default function Home({ blogs, category, totalCount }: HomeProps) {
+const BlogIndexPage = ({
+  blogs,
+  category,
+  totalCount,
+  currentPageNumber,
+}: HomeProps & { currentPageNumber: number }) => {
   const [showBlogs, setShowBlogs] = useState(blogs);
-
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-primary to-secondary py-6 dark:from-base-content dark:to-base-content sm:px-10">
@@ -41,7 +36,7 @@ export default function Home({ blogs, category, totalCount }: HomeProps) {
               </div>
             </div>
             <Pagination
-              currentPageValue={1}
+              currentPageValue={currentPageNumber}
               maxPageValue={Math.ceil(totalCount / 4)}
             />
           </div>
@@ -55,20 +50,35 @@ export default function Home({ blogs, category, totalCount }: HomeProps) {
       </div>
     </>
   );
-}
+};
 
-export const getStaticProps: GetStaticProps = async () => {
-  const offset = 0;
+export const getStaticPaths = async () => {
+  const range = (start: number, end: number) =>
+    [...Array(end - start + 1)].map((_, index) => start + index);
+  const data = await client.get({ endpoint: 'blog' });
+
+  const { totalCount } = data;
+  const paths = range(1, Math.ceil(totalCount / 4)).map(
+    (i) => `/blog/pages/${i}`
+  );
+  console.log(paths)
+  return { paths, fallback: false };
+};
+
+export const getStaticProps = async (context: any) => {
+  const id = context.params.id;
+  const offset = (id - 1) * 4;
   const limit = 4;
   const queries = { offset, limit };
+  const data = await client.get({ endpoint: 'blogs', queries });
 
-  const data = await client.get({ endpoint: 'blog', queries });
-  const category = await client.get({ endpoint: 'category' });
   return {
     props: {
-      blogs: data.contents,
-      category: category.contents,
+      blogs: data.blogs,
       totalCount: data.totalCount,
+      currentPageNumber: id,
     },
   };
 };
+
+export default BlogIndexPage;

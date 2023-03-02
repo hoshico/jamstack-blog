@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CategoryTable from '../../../components/category';
 import Card from '../../../components/top/BlogCard';
 import { Pagination } from '../../../components/layouts/Pagination';
@@ -12,6 +12,9 @@ const BlogIndexPage = ({
   currentPageNumber,
 }: HomeProps & { currentPageNumber: number }) => {
   const [showBlogs, setShowBlogs] = useState(blogs);
+  useEffect(() => {
+    setShowBlogs(blogs);
+  }, [blogs]);
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-primary to-secondary py-6 dark:from-base-content dark:to-base-content sm:px-10">
@@ -37,7 +40,7 @@ const BlogIndexPage = ({
             </div>
             <Pagination
               currentPageValue={currentPageNumber}
-              maxPageValue={Math.ceil(totalCount / 4)}
+              maxPageValue={Math.ceil(totalCount / 6)}
             />
           </div>
           {/*カテゴリー*/}
@@ -58,23 +61,24 @@ export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog' });
 
   const { totalCount } = data;
-  const paths = range(1, Math.ceil(totalCount / 4)).map(
+  const paths = range(1, Math.ceil(totalCount / 6)).map(
     (i) => `/blog/pages/${i}`
   );
-  console.log(paths)
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
-  const offset = (id - 1) * 4;
-  const limit = 4;
-  const queries = { offset, limit };
-  const data = await client.get({ endpoint: 'blogs', queries });
+  const offset = (id - 1) * 6;
 
+  const limit = 6;
+  const queries = { offset, limit };
+  const data = await client.get({ endpoint: 'blog', queries });
+  const category = await client.get({ endpoint: 'category' });
   return {
     props: {
-      blogs: data.blogs,
+      blogs: data.contents,
+      category: category.contents,
       totalCount: data.totalCount,
       currentPageNumber: id,
     },

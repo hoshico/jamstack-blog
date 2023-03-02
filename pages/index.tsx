@@ -40,10 +40,10 @@ export default function Home({ blogs, category, totalCount }: HomeProps) {
                 </ul>
               </div>
             </div>
-            <Pagination
+            {/*<Pagination
               currentPageValue={1}
-              maxPageValue={Math.ceil(totalCount / 4)}
-            />
+              maxPageValue={Math.ceil(totalCount / 6)}
+            />*/}
           </div>
           {/*カテゴリー*/}
           <CategoryTable
@@ -58,11 +58,11 @@ export default function Home({ blogs, category, totalCount }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const offset = 0;
-  const limit = 4;
-  const queries = { offset, limit };
+  //const offset = 0;
+  //const limit = 6;
+  //const queries = { offset, limit };
 
-  const data = await client.get({ endpoint: 'blog', queries });
+  const data = await client.get({ endpoint: 'blog', queries: { limit: 30 } });
   const category = await client.get({ endpoint: 'category' });
   return {
     props: {

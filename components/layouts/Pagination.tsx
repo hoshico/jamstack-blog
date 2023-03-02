@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 type Props = {
   maxPageValue: number;
@@ -6,6 +7,7 @@ type Props = {
 };
 
 export const Pagination = (props: Props) => {
+  const router = useRouter();
   const { maxPageValue, currentPageValue } = props;
 
   const maxPageNumber = Number(maxPageValue);
@@ -14,20 +16,34 @@ export const Pagination = (props: Props) => {
   const prevPage = currentPageNumber - 1;
   const nextPage = currentPageNumber + 1;
 
+  const movePreviousPage = () => {
+    console.log('hhh');
+    router.push(`/blog/pages/${prevPage}`);
+  };
+
+  const moveNextPage = () => {
+    console.log('hhh');
+    router.push(`/blog/pages/${nextPage}`);
+  };
+
   return (
-    <div className="flex px-3 py-12">
-      {currentPageNumber !== 1 && (
-        <div>
-          <Link href={`/blog/pages/${prevPage}`}>
-            <a>Previous</a>
-          </Link>
-        </div>
-      )}
-      {currentPageNumber !== maxPageNumber && (
-        <Link href={`/blog/pages/${nextPage}`}>
+    <div className='mx-auto w-5/12'>
+      <div className="btn-group grid grid-cols-2">
+        <button
+          className="btn btn-outline"
+          disabled={currentPageNumber === 1}
+          onClick={movePreviousPage}
+        >
+          <a>Previous</a>
+        </button>
+        <button
+          className="btn btn-outline"
+          disabled={currentPageNumber === maxPageNumber}
+          onClick={moveNextPage}
+        >
           <a>Next</a>
-        </Link>
-      )}
+        </button>
+      </div>
     </div>
   );
 };

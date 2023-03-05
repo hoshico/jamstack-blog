@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { client } from '../../libs/client';
 import cheerio from 'cheerio';
 import hljs from 'highlight.js';
@@ -26,11 +26,13 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理
-export const getStaticProps: GetStaticProps = async (context: any) => {
-  const id = context.params.id;
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext
+) => {
+  const id = context.params!.id as string;
   const data = await client.get({ endpoint: 'blog', contentId: id });
 
+  // TODO: データをテンプレートに受け渡す部分の処理
   const $ = cheerio.load(data.body);
   $('pre code').each((_, elm) => {
     const result = hljs.highlightAuto($(elm).text());

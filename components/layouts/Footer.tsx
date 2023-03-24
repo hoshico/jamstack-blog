@@ -5,9 +5,9 @@ export default function Footer() {
         {/*<p>ACME Industries Ltd.Providing reliable tech since 1992</p>*/}
       </div>
       <div>
-        <span className="font-bold">
+        {/*<span className="font-bold">
           Copyright © 2022hoshico.dev All rights reserved.
-        </span>
+        </span>*/}
       </div>
     </footer>
   );

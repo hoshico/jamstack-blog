@@ -16,17 +16,17 @@ const BlogDetail = ({ blog, highlightedBody }: Props) => {
         <div className="min-h-screen">
           <div className="py-20">
             <div className="mx-auto dark:text-base-100 md:max-w-7xl">
-              <div className="px-8 font-extrabold tracking-wider md:text-4xl">
+              <div className="px-8 text-center font-extrabold tracking-wider md:text-4xl">
                 {blog.title}
               </div>
-              <div className="m-auto mt-5 flex px-8 md:w-28 md:px-0">
-                <Moment
-                  className="text-xs text-gray-500 dark:text-base-100"
-                  format="YYYY.MM.DD"
-                >
-                  {blog.publishedAt}
-                </Moment>
-                <p className="text-xs text-gray-500 dark:text-base-100">
+              <div className="m-auto mt-5 px-8 md:w-28 md:px-0">
+                <p className="text-center text-xs text-gray-500 dark:text-base-100">
+                  <Moment
+                    className="text-xs text-gray-500 dark:text-base-100"
+                    format="YYYY.MM.DD"
+                  >
+                    {blog.publishedAt}
+                  </Moment>
                   に公開
                 </p>
               </div>

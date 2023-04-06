@@ -19,6 +19,7 @@
     "@types/three": "^0.147.1",
     "cheerio": "^1.0.0-rc.10",
     "daisyui": "^2.14.0",
+    "data-fns": "^1.1.0",
     "highlight.js": "^11.5.1",
     "microcms-js-sdk": "^2.0.0",
     "moment": "^2.29.3",

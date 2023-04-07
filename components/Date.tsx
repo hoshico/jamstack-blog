@@ -8,4 +8,4 @@ const FormatDate = (props: Props) => {
   console.log(format(new Date(dateString), 'yyyy-MM-dd'));
 };
 
-export default Date;
+export default FormatDate;

@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 
-const Date = ({ dataString }: { dataString: string }) => {
-  //console.log(format(new Date(), 'yyyy-MM-dd'));
+const Date = ({ dataString }: { dataString: number }) => {
+  console.log(format(dataString, 'yyyy-MM-dd'));
 };
 
 export default Date;

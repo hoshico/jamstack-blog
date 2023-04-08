@@ -2,6 +2,7 @@ import Moment from 'react-moment';
 import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../top/TableOfContents';
 import { Blog } from '../types/Blog';
+import FormatDate from '../FormatDate';
 
 type Props = {
   blog: Blog;
@@ -21,12 +22,7 @@ const BlogDetail = ({ blog, highlightedBody }: Props) => {
               </div>
               <div className="m-auto mt-5 px-8 md:w-28 md:px-0">
                 <p className="text-center text-xs text-gray-500 dark:text-base-100">
-                  <Moment
-                    className="text-xs text-gray-500 dark:text-base-100"
-                    format="YYYY.MM.DD"
-                  >
-                    {blog.publishedAt}
-                  </Moment>
+                  <FormatDate dateString={blog.publishedAt} />
                   に公開
                 </p>
               </div>

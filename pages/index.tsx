@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { client } from '../libs/client';
-import Card from '../components/top/BlogCard';
 import { Blog } from '../components/types/Blog';
-
 import { GetStaticProps } from 'next';
 import { Category } from '../components/types/Category';
 import CategoryTable from '../components/category';
-import { Pagination } from '../components/layouts/Pagination';
+import BlogCard from '../components/top/BlogCard';
 
 export type HomeProps = {
   blogs: Array<Blog>;
@@ -33,7 +31,7 @@ export default function Home({ blogs, category, totalCount }: HomeProps) {
                   ) : (
                     showBlogs.map((blog) => (
                       <li key={blog.id}>
-                        <Card blog={blog} />
+                        <BlogCard blog={blog} />
                       </li>
                     ))
                   )}

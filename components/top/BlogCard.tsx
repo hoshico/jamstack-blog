@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import Moment from 'react-moment';
 import { Blog } from '../types/Blog';
+import FormatDate from '../FormatDate';
 
 type BlogCard = {
   blog: Blog;
@@ -33,12 +33,7 @@ const BlogCard = (props: BlogCard) => {
               />
             </figure>
             <div className="card-body h-[200px] p-4">
-              <Moment
-                className="text-xs"
-                format="YYYY/MM/DD"
-              >
-                {props.blog.publishedAt}
-              </Moment>
+              <FormatDate dateString={props.blog.publishedAt} />
               <h2 className="card-title text-sm">{props.blog.title}</h2>
               {/* Todo: １ヶ月以内の投稿はNEWのバッジをつける */}
               {/*<div className="badge badge-secondary">NEW</div>*/}

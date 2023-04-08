@@ -1,14 +1,11 @@
-import { memo, MouseEventHandler } from 'react';
+import { ComponentProps, MouseEventHandler } from 'react';
 
 type Props = {
   label: string;
   className: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
-};
+} & ComponentProps<'button'>;
 
-/**
- * 汎用的なボタン
- */
 export const Button = (props: Props) => {
   const { label, onClick, className } = props;
 

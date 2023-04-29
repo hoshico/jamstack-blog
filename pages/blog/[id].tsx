@@ -29,6 +29,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
+  console.log("context情報: ",context)
   const id = context.params!.id as string;
   const data = await client.get({ endpoint: 'blog', contentId: id });
 

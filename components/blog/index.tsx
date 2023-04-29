@@ -1,4 +1,3 @@
-import Moment from 'react-moment';
 import { renderToc } from '../../libs/render-toc';
 import TableOfContents from '../top/TableOfContents';
 import { Blog } from '../types/Blog';

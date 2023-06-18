@@ -29,8 +29,8 @@ const AboutDetail = () => {
             <span className="text-white">Profile</span>
           </div>
         </div>
-        <div className="content p-10">
-          <div className="h-[400px] p-4">
+        <div className="content p-8 md:p-10">
+          <div className="h-[250px] p-0 md:h-[400px] md:p-4">
             <Canvas>
               <ambientLight />
               <Bath position={[0, -2, 5]} />

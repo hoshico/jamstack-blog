@@ -30,7 +30,7 @@ const AboutDetail = () => {
           </div>
         </div>
         <div className="content p-10">
-          <div className="h-[200px]">
+          <div className="h-[400px] p-4">
             <Canvas>
               <ambientLight />
               <Bath position={[0, -2, 5]} />

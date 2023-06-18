@@ -18,6 +18,7 @@ export default function Model(props: any) {
       <mesh
         castShadow
         receiveShadow
+        //@ts-ignore
         geometry={nodes.平面002.geometry}
         material={materials['マテリアル.003']}
         position={[0, 0, -3]}
@@ -27,6 +28,7 @@ export default function Model(props: any) {
       <mesh
         castShadow
         receiveShadow
+        //@ts-ignore
         geometry={nodes.平面001.geometry}
         material={materials['マテリアル.001']}
         position={[1.7, 2, -4.7]}
@@ -36,6 +38,7 @@ export default function Model(props: any) {
       <mesh
         castShadow
         receiveShadow
+        //@ts-ignore
         geometry={nodes.平面003.geometry}
         material={materials['マテリアル.004']}
         position={[-2.82, 2, -5.82]}
@@ -50,12 +53,14 @@ export default function Model(props: any) {
         <mesh
           castShadow
           receiveShadow
+          //@ts-ignore
           geometry={nodes.立方体007.geometry}
           material={materials['マテリアル.005']}
         />
         <mesh
           castShadow
           receiveShadow
+          //@ts-ignore
           geometry={nodes.立方体007_1.geometry}
           material={materials['マテリアル.006']}
         />
@@ -63,6 +68,7 @@ export default function Model(props: any) {
       <mesh
         castShadow
         receiveShadow
+        //@ts-ignore
         geometry={nodes.円柱001.geometry}
         material={materials['マテリアル.008']}
         position={[-1.4, 1, -3.85]}
@@ -72,6 +78,7 @@ export default function Model(props: any) {
       <mesh
         castShadow
         receiveShadow
+        //@ts-ignore
         geometry={nodes.円柱002.geometry}
         material={materials['マテリアル.009']}
         position={[-0.1, 1, -2.5]}
@@ -81,6 +88,7 @@ export default function Model(props: any) {
       <mesh
         castShadow
         receiveShadow
+        //@ts-ignore
         geometry={nodes.立方体001.geometry}
         material={materials['マテリアル.007']}
         position={[0.9, 0.4, -3.5]}

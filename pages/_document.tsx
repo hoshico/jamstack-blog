@@ -1,11 +1,33 @@
 import React from 'react';
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
+import { GA_MEASUREMENT_ID } from '../libs/gtag';
 
 export default class Document extends NextDocument {
   render() {
     return (
       <Html className="bg-base-300">
         <Head>
+          {/* GA_TRACKING_ID が設定されていない場合は、なし */}
+          {GA_MEASUREMENT_ID && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+        `,
+                }}
+              />
+            </>
+          )}
           <link
             rel="icon"
             type="image/png"

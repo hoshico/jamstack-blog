@@ -1,9 +1,9 @@
 import Bath from './Bath';
-import { Canvas, useFrame } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 // 「Vector3」のインポートを追加
 import { Vector3 } from 'three';
 
+import { Canvas, useFrame } from '@react-three/fiber';
 const Rig = ({ v = new Vector3() }) => {
   return useFrame((state) => {
     state.camera.position.lerp(
@@ -58,14 +58,6 @@ const AboutDetail = () => {
               <Bath position={[0, -2, 5]} />
               <Rig />
               <pointLight position={[10, 10, 10]} />
-              {/*<Text
-                position={[0, 3, 0]}
-                font="/Roboto-Black.ttf"
-                fontSize={3}
-                color={'#fff'}
-              >
-                Profile
-              </Text>*/}
             </Canvas>
             <p className="text-center text-white">Kohmeisen in Nakameguro</p>
           </div>

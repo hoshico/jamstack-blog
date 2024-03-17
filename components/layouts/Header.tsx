@@ -7,14 +7,18 @@ export default function Header() {
     <header className="bg-base-300 text-gray-600">
       <div className="navbar mx-auto w-11/12 2xl:w-8/12">
         <div className="flex-1">
-          <Link href="/">
-            <a className="btn-ghost ml-2 text-3xl normal-case md:ml-5">
-              <span className="text-primary">hoshi</span>code
-            </a>
+          <Link
+            href="/"
+            passHref
+          >
+            <p className="btn-ghost ml-2 text-3xl normal-case md:ml-5">
+              <span className="text-primary">hoshi</span>
+              code
+            </p>
           </Link>
           <div className="ml-auto flex flex-col items-center">
             {/*eslint-disable-next-line*/}
-            <label className="swap-rotate swap">
+            <label className="swap swap-rotate">
               <input
                 type="checkbox"
                 onClick={() => presistToggle(!isDarkMode)}
@@ -35,10 +39,13 @@ export default function Header() {
               </svg>
             </label>
           </div>
-          <Link href="/about">
-            <a className="btn btn-ghost ml-1 mr-2 text-xl normal-case md:mr-5">
-              <p>about</p>
-            </a>
+          <Link
+            href="/about"
+            passHref
+          >
+            <p className="btn btn-ghost ml-1 mr-2 text-xl normal-case md:mr-5">
+              about
+            </p>
           </Link>
         </div>
       </div>

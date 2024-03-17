@@ -4,7 +4,6 @@ import cheerio from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/hybrid.css';
 import type { Blog } from '../../components/types/Blog';
-import { Params } from 'next/dist/server/router';
 import BlogDetail from '../../components/blog';
 
 type BlogProps = {
@@ -20,7 +19,7 @@ export default function Blog({ blog, highlightedBody }: BlogProps) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths<Params> = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog', queries: { limit: 30 } });
   const paths = data.contents.map((content: any) => `/blog/${content.id}`);
   return { paths, fallback: false };

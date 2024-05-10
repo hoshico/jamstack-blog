@@ -17,17 +17,15 @@ export const Pagination = (props: Props) => {
   const nextPage = currentPageNumber + 1;
 
   const movePreviousPage = () => {
-    console.log('hhh');
     router.push(`/blog/pages/${prevPage}`);
   };
 
   const moveNextPage = () => {
-    console.log('hhh');
     router.push(`/blog/pages/${nextPage}`);
   };
 
   return (
-    <div className='mx-auto w-5/12'>
+    <div className="mx-auto w-5/12">
       <div className="btn-group grid grid-cols-2">
         <button
           className="btn btn-outline"

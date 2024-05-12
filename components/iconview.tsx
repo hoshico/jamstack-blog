@@ -29,16 +29,14 @@ export default function IconView(props: Props) {
     case 'next':
       return (
         <Next
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
         />
       );
     case 'react':
       return (
         <React
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#61DAFB"
         />
@@ -46,8 +44,7 @@ export default function IconView(props: Props) {
     case 'node':
       return (
         <Node
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#5FA04E"
         />
@@ -55,8 +52,7 @@ export default function IconView(props: Props) {
     case 'typescript':
       return (
         <Typescript
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#3178C6"
         />
@@ -64,8 +60,7 @@ export default function IconView(props: Props) {
     case 'cssmodules':
       return (
         <Cssmodules
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#000000"
         />
@@ -73,8 +68,7 @@ export default function IconView(props: Props) {
     case 'mui':
       return (
         <Mui
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#007FFF"
         />
@@ -82,8 +76,7 @@ export default function IconView(props: Props) {
     case 'styledcomponents':
       return (
         <Styledcomponents
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#DB7093"
         />
@@ -91,8 +84,7 @@ export default function IconView(props: Props) {
     case 'tailwindcss':
       return (
         <Tailwindcss
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#06B6D4"
         />
@@ -100,8 +92,7 @@ export default function IconView(props: Props) {
     case 'nest':
       return (
         <Nest
-          // width={50}
-          // height={50}
+          className="size-max"
           strokeWidth={'2.5px'}
           fill="#E0234E"
         />

@@ -29,7 +29,7 @@ export default function IconView(props: Props) {
     case 'next':
       return (
         <Next
-          className="size-max"
+          className="w-fit"
           strokeWidth={'2.5px'}
         />
       );

@@ -44,7 +44,7 @@ const AboutDetail = () => {
             <div className="mb-2 mt-4 bg-gray-400 p-1">
               <p className="text-2xl text-white">skill:</p>
             </div>
-            <div className="mt-8 grid grid-cols-6 gap-4 sm:grid-cols-8 md:grid-cols-10">
+            <div className="mt-8 grid grid-cols-6 gap-4 md:grid-cols-10">
               <IconView label="typescript" />
               <IconView label="next" />
               <IconView label="react" />

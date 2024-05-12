@@ -41,7 +41,7 @@ const AboutDetail = () => {
                 <p className="text-xl text-white">y.Hoshi</p>
               </div>
             </div>
-            <div className="mb-2 mt-4 bg-gray-400 p-1">
+            {/* <div className="mb-2 mt-4 bg-gray-400 p-1">
               <p className="text-2xl text-white">skill:</p>
             </div>
             <div className="mt-8 grid grid-cols-4 gap-4 md:grid-cols-10">
@@ -54,7 +54,7 @@ const AboutDetail = () => {
               <IconView label="styledcomponents" />
               <IconView label="tailwindcss" />
               <IconView label="nest" />
-            </div>
+            </div> */}
           </div>
           <div className="h-[250px] p-0 md:h-[400px] md:p-4">
             <Canvas>

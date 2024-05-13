@@ -44,16 +44,24 @@ const AboutDetail = () => {
             <div className="mb-2 mt-4 bg-gray-400 p-1">
               <p className="text-2xl text-white">skill:</p>
             </div>
-            <div className="mt-4 grid grid-cols-4 gap-4 md:grid-cols-10">
+            <div className="mt-4 grid grid-cols-4 gap-4 md:grid-cols-8">
               <IconView label="typescript" />
               <IconView label="next" />
               <IconView label="react" />
               <IconView label="node" />
-              <IconView label="cssmodules" />
-              <IconView label="mui" />
-              <IconView label="styledcomponents" />
-              <IconView label="tailwindcss" />
+              <IconView label="express" />
               <IconView label="nest" />
+            </div>
+            <div className="mt-4 grid grid-cols-4 gap-4 md:grid-cols-8">
+              <IconView label="tailwindcss" />
+              <IconView label="mui" />
+              <IconView label="cssmodules" />
+              <IconView label="styledcomponents" />
+              <IconView label="shadcn" />
+            </div>
+            <div className="mt-4 grid grid-cols-4 gap-4 md:grid-cols-8">
+              <IconView label="graphql" />
+              <IconView label="apollo" />
             </div>
           </div>
           <div className="h-[250px] p-0 md:h-[400px] md:p-4">

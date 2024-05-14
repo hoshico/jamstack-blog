@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Typechallenge from '../../public/icons/typechallenge.svg';
+import Image from 'next/image';
 
 export default function Footer() {
   return (

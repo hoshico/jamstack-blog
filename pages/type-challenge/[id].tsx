@@ -1,5 +1,5 @@
-const TypechallengeDetail = () => {
+const TypeChallengeDetail = () => {
   return <></>;
 };
 
-export default TypechallengeDetail;
+export default TypeChallengeDetail;

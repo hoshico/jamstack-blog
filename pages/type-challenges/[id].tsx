@@ -2,4 +2,4 @@ const TypeChallengesDetail = () => {
   return <></>;
 };
 
-export default TypeChallengeDetail;
+export default TypeChallengesDetail;

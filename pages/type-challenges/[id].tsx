@@ -1,4 +1,4 @@
-const TypeChallengeDetail = () => {
+const TypeChallengesDetail = () => {
   return <></>;
 };
 

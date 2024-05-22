@@ -116,21 +116,60 @@ const mediumList = [
   'IsFixedStringLiteralType',
 ];
 
-// const hardList = [
-//   'Pick',
-//   'Readonly',
-//   'Tuple to Object',
-//   'First of Array',
-//   'Length of Tuple',
-//   'Exclude',
-//   'Awaited',
-//   'If',
-//   'Concat',
-//   'Includes',
-//   'Push',
-//   'Unshift',
-//   'Parameters',
-// ];
+const hardList = [
+  'Simple Vue',
+  'Currying',
+  'Union to Intersection',
+  'Get Required',
+  'Get Optional',
+  'Required Keys',
+  'Optional keys',
+  'Capitalize Words',
+  'CamelCase',
+  'C-printf Parser',
+  'Vue Basic Props',
+  'IsAny',
+  'Typed Get',
+  'String to Number',
+  'tuple Filter',
+  'Tuple to Enum Object',
+  'printf',
+  'Deep object to unique',
+  'Length of String 2',
+  'Union to Tuple',
+  'String Join',
+  'DeepPick',
+  'Pinia',
+  'Camelize',
+  'Drop String',
+  'Split',
+  'ClassPublickeys',
+  'IsRequiredkey',
+  'ObjectFromEntries',
+  'IsPalindrome',
+  'Mutable Keys',
+  'Intersection',
+  'Binary to Decimal',
+  'Object key Paths',
+  'Two Sum',
+  'ValidDate',
+  'Assign',
+  'Maximum',
+  'Capitalize Nest Object Keys',
+  'Replace Union',
+  'FizzBuzz',
+  'Run-length encoding',
+  'Tree path array',
+  'SnakeCase',
+  'IsNegativeNumber',
+  'OptionalUndefined',
+  'Unique Items',
+  'BitwiseXOR',
+  'Sudoku',
+  'Length of String 3',
+  'Unbox',
+  'Binary Addition',
+];
 
 const Typechallenges = () => {
   return (
@@ -144,7 +183,7 @@ const Typechallenges = () => {
         <ul className="mx-auto flex w-5/6 flex-wrap gap-4">
           {easyList.map((ele) => (
             <li key={ele}>
-              <div className="badge badge-info gap-2">
+              <div className="badge gap-2 border-none bg-green-500">
                 <p className="text-white">{ele}</p>
               </div>
             </li>
@@ -155,14 +194,14 @@ const Typechallenges = () => {
         <ul className="mx-auto flex w-5/6 flex-wrap gap-4">
           {mediumList.map((ele) => (
             <li key={ele}>
-              <div className="badge badge-warning gap-2">
+              <div className="badge gap-2 border-none bg-yellow-600">
                 <p className="text-white">{ele}</p>
               </div>
             </li>
           ))}
         </ul>
       </div>
-      {/* <div className="mt-6">
+      <div className="mt-6">
         <ul className="mx-auto flex w-5/6 flex-wrap gap-4">
           {hardList.map((ele) => (
             <li key={ele}>
@@ -172,7 +211,7 @@ const Typechallenges = () => {
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 };

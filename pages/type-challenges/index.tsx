@@ -183,7 +183,7 @@ const Typechallenges = () => {
         <ul className="mx-auto flex w-5/6 flex-wrap gap-4">
           {easyList.map((ele) => (
             <li key={ele}>
-              <div className="badge gap-2 border-none bg-green-500">
+              <div className="badge cursor-pointer gap-2 border-none bg-green-500">
                 <p className="text-white">{ele}</p>
               </div>
             </li>
@@ -194,7 +194,7 @@ const Typechallenges = () => {
         <ul className="mx-auto flex w-5/6 flex-wrap gap-4">
           {mediumList.map((ele) => (
             <li key={ele}>
-              <div className="badge gap-2 border-none bg-yellow-600">
+              <div className="badge cursor-pointer  gap-2 border-none bg-yellow-600">
                 <p className="text-white">{ele}</p>
               </div>
             </li>
@@ -205,7 +205,7 @@ const Typechallenges = () => {
         <ul className="mx-auto flex w-5/6 flex-wrap gap-4">
           {hardList.map((ele) => (
             <li key={ele}>
-              <div className="badge badge-error gap-2">
+              <div className="badge badge-error cursor-pointer gap-2">
                 <p className="text-white">{ele}</p>
               </div>
             </li>

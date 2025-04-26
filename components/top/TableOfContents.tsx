@@ -8,7 +8,7 @@ type TocProps = {
 };
 export default function TableOfContents({ toc }: TocProps) {
   return (
-    <div className="sticky top-10 hidden h-[fit-content] w-[250px] rounded-xl bg-base-100 py-10 px-2 shadow md:block">
+    <div className="sticky top-10 hidden h-[fit-content] w-[250px] rounded-xl bg-base-100 py-10 px-2 shadow-sm md:block">
       <p className="mb-5 pl-2 font-bold">目次</p>
       <ul className="list-disc pl-6">
         {toc.map((data) => (

@@ -12,7 +12,7 @@ const BlogDetail = ({ blog, highlightedBody }: Props) => {
   const toc = renderToc(blog.body);
   return (
     <div data-theme="winter">
-      <div className="m-auto w-full bg-gradient-to-b from-primary-content via-info to-neutral-content dark:from-base-content dark:to-base-content">
+      <div className="m-auto w-full bg-linear-to-b from-primary-content via-info to-neutral-content dark:from-base-content dark:to-base-content">
         <div className="min-h-screen">
           <div className="py-20">
             <div className="mx-auto dark:text-base-100 md:max-w-7xl">
@@ -29,7 +29,7 @@ const BlogDetail = ({ blog, highlightedBody }: Props) => {
             {/*メインコンテンツ*/}
             <div className="mx-auto mt-4  flex max-w-7xl justify-between md:mt-12 md:px-10">
               {/*本文*/}
-              <div className="w-full bg-base-100 px-8 py-4 shadow dark:bg-slate-800 dark:text-base-100 md:w-[calc(100%_-_288px)] md:rounded-xl md:p-10">
+              <div className="w-full bg-base-100 px-8 py-4 shadow-sm dark:bg-slate-800 dark:text-base-100 md:w-[calc(100%_-_288px)] md:rounded-xl md:p-10">
                 <div
                   className="main-text "
                   dangerouslySetInnerHTML={{

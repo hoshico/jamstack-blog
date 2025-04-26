@@ -16,7 +16,7 @@ const Rig = ({ v = new Vector3() }) => {
 
 const AboutDetail = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-300 to-cyan-800 px-12 py-8 dark:from-gray-400 dark:to-gray-800">
+    <div className="min-h-screen bg-linear-to-br from-cyan-300 to-cyan-800 px-12 py-8 dark:from-gray-400 dark:to-gray-800">
       <div className="flex"></div>
       {/*プロフィール背景*/}
       <div className="mx-auto rounded-md bg-stone-800/60 lg:w-6/12">

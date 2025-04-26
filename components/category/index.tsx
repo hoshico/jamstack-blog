@@ -23,7 +23,7 @@ const CategoryTable = (props: Props) => {
     }
   };
   return (
-    <div className="sticky top-10 hidden h-[fit-content] w-[250px] rounded-xl bg-base-200 py-10 px-2 shadow lg:block">
+    <div className="sticky top-10 hidden h-[fit-content] w-[250px] rounded-xl bg-base-200 py-10 px-2 shadow-sm lg:block">
       <p className="mb-5 pl-2 font-bold">カテゴリー</p>
       <ul className="list-disc pl-6">
         <li

@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
+  reactStrictMode: true,
+  images: {
+    domains: ['images.microcms-assets.io'],
+    disableStaticImages: true,
+  },
+  experimental: {
+    appDir: true, // 👈 これ追加するだけ！
+  },
+  webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       use: [
@@ -13,11 +21,6 @@ const nextConfig = {
       ],
     });
     return config;
-  },
-  reactStrictMode: true,
-  images: {
-    domains: ['images.microcms-assets.io'],
-    disableStaticImages: true,
   },
 };
 

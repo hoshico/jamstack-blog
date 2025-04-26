@@ -21,19 +21,18 @@
     "@types/three": "^0.147.1",
     "cheerio": "^1.0.0-rc.10",
     "daisyui": "^2.14.0",
-    "data-fns": "^1.1.0",
     "date-fns": "^2.29.3",
     "date-fns-tz": "^2.0.0",
     "highlight.js": "^11.5.1",
     "microcms-js-sdk": "^2.0.0",
     "moment": "^2.29.3",
-    "next": "13.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-moment": "^1.1.2",
     "react-use": "^17.4.0",
     "three": "^0.148.0",
-    "typescript": "^4.6.3"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",

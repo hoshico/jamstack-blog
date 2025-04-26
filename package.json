@@ -7,10 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fix:lint": "next lint --fix",
-    "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "fix:lint": "next lint --fix"
   },
   "dependencies": {
     "@react-three/drei": "^9.50.3",
@@ -37,14 +34,6 @@
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@biomejs/biome": "1.9.4",
-    "@storybook/addon-essentials": "7.6.13",
-    "@storybook/addon-interactions": "7.6.13",
-    "@storybook/addon-links": "7.6.13",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "7.6.13",
-    "@storybook/nextjs": "7.6.13",
-    "@storybook/react": "7.6.13",
-    "@storybook/test": "7.6.13",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.4",
     "@types/cheerio": "^0.22.31",
@@ -52,18 +41,7 @@
     "@types/highlightjs": "^9.12.2",
     "@types/react-dom": "^18.0.10",
     "babel-loader": "^8.3.0",
-    "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8.4.12",
-    "storybook": "7.6.13",
     "tailwindcss": "^4.1.4"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css,less,sass,scss}": [
-      "stylelint --fix"
-    ]
   }
 }

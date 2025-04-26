@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 type Toc = {
   text: string;
   id: string;

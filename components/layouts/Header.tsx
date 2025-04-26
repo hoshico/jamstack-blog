@@ -17,7 +17,6 @@ export default function Header() {
             </p>
           </Link>
           <div className="ml-auto flex flex-col items-center">
-            {/*eslint-disable-next-line*/}
             <label className="swap swap-rotate">
               <input
                 type="checkbox"

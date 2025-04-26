@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fix:lint": "next lint --fix"
+    "fix:lint": "next lint --fix",
+    "orval": "orval"
   },
   "dependencies": {
     "@react-three/drei": "^9.50.3",
@@ -41,6 +42,7 @@
     "@types/highlightjs": "^9.12.2",
     "@types/react-dom": "^18.0.10",
     "babel-loader": "^8.3.0",
+    "orval": "^7.8.0",
     "postcss": "^8.4.12",
     "tailwindcss": "^4.1.4"
   }

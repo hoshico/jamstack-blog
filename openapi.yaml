@@ -1,0 +1,115 @@
+openapi: 3.0.3
+info:
+  title: microCMS Blog API
+  version: 1.0.0
+paths:
+  /blog:
+    get:
+      summary: Get Blog List
+      operationId: getBlogs
+      security:
+        - apiKey: []
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlogList'
+  /category:
+    get:
+      summary: Get Category List
+      operationId: getCategories
+      security:
+        - apiKey: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryList'
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-MICROCMS-API-KEY
+  schemas:
+    Blog:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        category:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+        publishedAt:
+          type: string
+          format: date-time
+        photo:
+          type: object
+          properties:
+            url:
+              type: string
+            height:
+              type: integer
+            width:
+              type: integer
+    BlogList:
+      type: object
+      properties:
+        contents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Blog'
+        totalCount:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        image:
+          type: object
+          properties:
+            url:
+              type: string
+            height:
+              type: integer
+            width:
+              type: integer
+    CategoryList:
+      type: object
+      properties:
+        contents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        totalCount:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer

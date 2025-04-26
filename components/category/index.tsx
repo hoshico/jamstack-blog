@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { Blog } from '../types/Blog';
+
 import { Category } from '../types/Category';
+import { Blog } from '../../libs/api/generated';
 
 type Props = {
   blogs: Array<Blog>;
@@ -46,7 +47,7 @@ const CategoryTable = (props: Props) => {
               ></path>
             </svg>
           </div>
-          <p className='text-black'>ALL</p>
+          <p className="text-black">ALL</p>
         </li>
         {category.length ? (
           category.map((category) => (

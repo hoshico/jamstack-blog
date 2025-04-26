@@ -1,7 +1,8 @@
+'use client';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { Blog } from '../types/Blog';
 import FormatDate from '../FormatDate';
+import { Blog } from '../../libs/api/generated';
 
 type BlogCard = {
   blog: Blog;
@@ -35,7 +36,7 @@ const BlogCard = (props: BlogCard) => {
             />
           </figure>
           <div className="card-body h-[200px] p-4">
-            <FormatDate dateString={props.blog.publishedAt} />
+            {/* <FormatDate dateString={props.blog.publishedAt} /> */}
             <h2 className="card-title text-sm">{props.blog.title}</h2>
             {/* Todo: １ヶ月以内の投稿はNEWのバッジをつける */}
             {/*<div className="badge badge-secondary">NEW</div>*/}

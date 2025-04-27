@@ -20,7 +20,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BlogList'
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/BlogList'
+  /blog/{id}:
+    get:
+      summary: Get Blog by ID
+      operationId: getBlogById
+      security:
+        - apiKey: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blog'
   /category:
     get:
       summary: Get Category List
@@ -33,7 +55,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CategoryList'
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CategoryList'
 components:
   securitySchemes:
     apiKey:

@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { client } from '../libs/client';
-import { Blog } from '../components/types/Blog';
-import { GetStaticProps } from 'next';
-import { Category } from '../components/types/Category';
-import CategoryTable from '../components/category';
-import BlogCard from '../components/top/BlogCard';
+import { useState } from "react";
+import { client } from "../src/libs/client";
+import { Blog } from "../src/components/types/Blog";
+import { GetStaticProps } from "next";
+import { Category } from "../src/components/types/Category";
+import CategoryTable from "../src/components/category";
+import BlogCard from "../src/components/top/BlogCard";
 
 export type HomeProps = {
   blogs: Array<Blog>;
@@ -60,8 +60,8 @@ export const getStaticProps: GetStaticProps = async () => {
   //const limit = 6;
   //const queries = { offset, limit };
 
-  const data = await client.get({ endpoint: 'blog', queries: { limit: 30 } });
-  const category = await client.get({ endpoint: 'category' });
+  const data = await client.get({ endpoint: "blog", queries: { limit: 30 } });
+  const category = await client.get({ endpoint: "category" });
   return {
     props: {
       blogs: data.contents,

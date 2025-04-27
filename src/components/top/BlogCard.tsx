@@ -1,8 +1,8 @@
-'use client';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import FormatDate from '../FormatDate';
-import { Blog } from '../../libs/api/generated';
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
+import FormatDate from "../FormatDate";
+import { Blog } from "../../libs/api/generated";
 
 type BlogCard = {
   blog: Blog;
@@ -11,15 +11,12 @@ const BlogCard = (props: BlogCard) => {
   const [mouseOver, setMouseOver] = useState(false);
   return (
     <>
-      <Link
-        href={`/blog/${props.blog.id}`}
-        passHref
-      >
+      <Link href={`/blog/${props.blog.id}`} passHref>
         <div
           className={
             mouseOver
-              ? 'card w-full scale-105 bg-base-100 shadow-xl transition duration-300'
-              : 'card w-full bg-base-100 shadow-xl duration-300'
+              ? "card w-full scale-105 bg-base-100 shadow-xl transition duration-300"
+              : "card w-full bg-base-100 shadow-xl duration-300"
           }
           onMouseOver={() => setMouseOver(true)}
           onMouseLeave={() => setMouseOver(false)}
@@ -30,7 +27,7 @@ const BlogCard = (props: BlogCard) => {
               src={
                 props.blog.photo
                   ? props.blog.photo.url
-                  : 'https://api.lorem.space/image/shoes'
+                  : "https://api.lorem.space/image/shoes"
               }
               alt="blogイメージ"
             />
@@ -43,10 +40,7 @@ const BlogCard = (props: BlogCard) => {
             <div className="card-actions mt-auto justify-end">
               {props.blog.category ? (
                 props.blog.category.map((category) => (
-                  <div
-                    key={category.id}
-                    className="badge badge-outline"
-                  >
+                  <div key={category.id} className="badge badge-outline">
                     <p>{category.name}</p>
                   </div>
                 ))

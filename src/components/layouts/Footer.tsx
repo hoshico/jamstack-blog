@@ -1,27 +1,17 @@
-import Link from 'next/link';
-import Typechallenge from '../../public/icons/typechallenge.svg';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="footer footer-center bg-base-300 p-10 text-base-content">
       <div className="grid grid-flow-col gap-4">
-        <Link
-          href="/"
-          passHref
-        >
+        <Link href="/" passHref>
           <p className="text-xl normal-case">Top</p>
         </Link>
-        <Link
-          href="/about"
-          passHref
-        >
+        <Link href="/about" passHref>
           <p className="text-xl normal-case">About</p>
         </Link>
-        <Link
-          href="https://github.com/hoshico"
-          passHref
-        >
+        <Link href="https://github.com/hoshico" passHref>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -43,10 +33,7 @@ export default function Footer() {
         <p className="text-xl text-gray-600">Build By</p>
         <div className="flex items-center gap-5">
           {/*Next.js*/}
-          <Link
-            href="https://nextjs.org/"
-            passHref
-          >
+          <Link href="https://nextjs.org/" passHref>
             <svg
               width="35"
               height="36"
@@ -62,10 +49,7 @@ export default function Footer() {
             </svg>
           </Link>
           {/*tailwind*/}
-          <Link
-            href="https://tailwindcss.com/"
-            passHref
-          >
+          <Link href="https://tailwindcss.com/" passHref>
             <svg
               width="50"
               height="30"
@@ -87,16 +71,12 @@ export default function Footer() {
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop stopColor="#2298BD" />
-                  <stop
-                    offset="1"
-                    stopColor="#0ED7B5"
-                  />
+                  <stop offset="1" stopColor="#0ED7B5" />
                 </linearGradient>
               </defs>
             </svg>
           </Link>
-          {/*daisyUI*/}
-          <Link
+          {/* <Link
             href="https://daisyui.com/"
             passHref
           >
@@ -112,13 +92,10 @@ export default function Footer() {
                 fill="black"
               />
             </svg>
-          </Link>
+          </Link> */}
 
           {/*microCMS*/}
-          <Link
-            href="https://microcms.io/"
-            passHref
-          >
+          <Link href="https://microcms.io/" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="106"
@@ -126,20 +103,13 @@ export default function Footer() {
               viewBox="0 0 422 80"
               version="1.1"
             >
-              <g
-                id="Logo"
-                stroke="none"
-                fill="none"
-              >
+              <g id="Logo" stroke="none" fill="none">
                 <g
                   id="Artboard"
                   transform="translate(-70.000000, -80.000000)"
                   fill="#2B2C30"
                 >
-                  <g
-                    id="Group-2"
-                    transform="translate(70.000000, 80.000000)"
-                  >
+                  <g id="Group-2" transform="translate(70.000000, 80.000000)">
                     <g id="Group">
                       <path
                         d="M70,5.68434189e-14 C75.5228475,5.68434189e-14 80,4.4771525 80,10 L80,70 C80,75.5228475 75.5228475,80 70,80 L10,80 C4.4771525,80 -7.10542736e-14,75.5228475 -7.10542736e-14,70 L-7.10542736e-14,10 L-7.10542736e-14,10 C-7.10542736e-14,5 5,5.68434189e-14 10,5.68434189e-14 L70,5.68434189e-14 L70,5.68434189e-14 Z M64.7487373,36.4644661 C62.7961159,34.5118446 59.630291,34.5118446 57.6776695,36.4644661 L57.6776695,36.4644661 L38.5857864,55.5563492 L35.7573593,52.7279221 L30.1005051,58.3847763 L35.0502525,63.3345238 C37.002874,65.2871452 40.1686989,65.2871452 42.1213203,63.3345238 L42.1213203,63.3345238 L61.2132034,44.2426407 L64.0416306,47.0710678 L69.6984848,41.4142136 Z M53.4350288,25.1507576 C51.4824074,23.1981361 48.3165825,23.1981361 46.363961,25.1507576 L46.363961,25.1507576 L21.6152237,49.8994949 L27.2720779,55.5563492 L49.8994949,32.9289322 L52.7279221,35.7573593 L58.3847763,30.1005051 Z M42.1213203,13.8370491 C40.1686989,11.8844276 37.002874,11.8844276 35.0502525,13.8370491 L35.0502525,13.8370491 L13.8370491,35.0502525 C11.8844276,37.002874 11.8844276,40.1686989 13.8370491,42.1213203 L13.8370491,42.1213203 L18.7867966,47.0710678 L24.4436508,41.4142136 L21.6152237,38.5857864 L38.5857864,21.6152237 L41.4142136,24.4436508 L47.0710678,18.7867966 Z"

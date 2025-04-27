@@ -1,9 +1,9 @@
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
-import Layout from '../components/layouts/Layout';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { GA_MEASUREMENT_ID, pageview } from '../libs/gtag';
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import Layout from "../src/components/layouts/Layout";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { GA_MEASUREMENT_ID, pageview } from "../src/libs/gtag";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       pageview(url);
     };
 
-    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
   return (

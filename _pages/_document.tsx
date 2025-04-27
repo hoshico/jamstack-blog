@@ -1,6 +1,6 @@
-import React from 'react';
-import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
-import { GA_MEASUREMENT_ID } from '../libs/gtag';
+import React from "react";
+import NextDocument, { Head, Html, Main, NextScript } from "next/document";
+import { GA_MEASUREMENT_ID } from "../src/libs/gtag";
 
 export default class Document extends NextDocument {
   render() {

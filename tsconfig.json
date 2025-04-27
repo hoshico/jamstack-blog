@@ -22,13 +22,19 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "libs/client.js",
-    "libs/render-toc.ts",
+    "src/libs/client.js",
+    "src/libs/render-toc.ts",
     "next-env.d.ts",
     "_pages/_app.tsx",
     ".next/types/**/*.ts"

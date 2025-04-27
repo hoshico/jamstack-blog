@@ -1,7 +1,7 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from "react";
 
-import { Category } from '../types/Category';
-import { Blog } from '../../libs/api/generated';
+import { Category } from "../types/Category";
+import { Blog } from "../../libs/api/generated";
 
 type Props = {
   blogs: Array<Blog>;
@@ -12,7 +12,7 @@ type Props = {
 const CategoryTable = (props: Props) => {
   const { blogs, category, setShowBlogs } = props;
   const selectCategory = (category: string) => {
-    if (category === 'all') {
+    if (category === "all") {
       setShowBlogs(blogs);
     } else {
       // カテゴリーを持つ記事を選択
@@ -29,7 +29,7 @@ const CategoryTable = (props: Props) => {
       <ul className="list-disc pl-6">
         <li
           className="mb-3 flex cursor-pointer items-center text-white hover:opacity-60"
-          onClick={() => selectCategory('all')}
+          onClick={() => selectCategory("all")}
         >
           <div className="mask mask-squircle mr-4 w-8">
             <svg
@@ -57,10 +57,7 @@ const CategoryTable = (props: Props) => {
               onClick={() => selectCategory(category.name)}
             >
               <div className="mask mask-squircle mr-4 w-8">
-                <img
-                  src={category.image.url}
-                  alt=""
-                />
+                <img src={category.image.url} alt="" />
               </div>
               <p>{category.name}</p>
             </li>

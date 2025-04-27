@@ -1,7 +1,7 @@
-import { renderToc } from '../../libs/render-toc';
-import TableOfContents from '../top/TableOfContents';
-import { Blog } from '../types/Blog';
-import FormatDate from '../FormatDate';
+import { renderToc } from "../../libs/render-toc";
+import TableOfContents from "../top/TableOfContents";
+import { Blog } from "../types/Blog";
+import FormatDate from "../FormatDate";
 
 type Props = {
   blog: Blog;
@@ -33,7 +33,7 @@ const BlogDetail = ({ blog, highlightedBody }: Props) => {
                 <div
                   className="main-text "
                   dangerouslySetInnerHTML={{
-                    __html: highlightedBody || '',
+                    __html: highlightedBody || "",
                   }}
                 ></div>
               </div>

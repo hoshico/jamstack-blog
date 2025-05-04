@@ -6,9 +6,9 @@ import "highlight.js/styles/hybrid.css";
 export default async function BlogPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const response = await getBlogById(slug, {
     headers: {

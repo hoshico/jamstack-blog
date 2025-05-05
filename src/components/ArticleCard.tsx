@@ -15,13 +15,14 @@ const ArticleCardContent = ({ blog }: { blog: Blog }) => {
 
   return (
     <Link href={`/blog/${blog.id}`}>
-      <Card className="w-full h-[350px] flex flex-col pt-0">
+      <Card className="w-full h-[350px] flex flex-col pt-0 border-0">
         <AspectRatio ratio={16 / 9} className="relative">
           <Image
             src={blog.photo.url}
             alt={blog.title}
-            className="object-cover rounded-t-2xl"
+            className="object-cover rounded-t-xl w-full h-full"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </AspectRatio>
         <CardHeader className="flex-1">

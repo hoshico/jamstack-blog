@@ -22,7 +22,7 @@
     "cheerio": "^1.0.0-rc.10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "date-fns": "^2.29.3",
+    "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "highlight.js": "^11.5.1",
     "html-react-parser": "^5.2.3",

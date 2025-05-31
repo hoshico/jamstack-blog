@@ -1,22 +1,21 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './pages/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './components/*.{js,ts,jsx,tsx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      fontFamily: {
-        raleway: ['Raleway'],
-        kosugimaru: ['Kosugi Maru'],
-        azeretmono: ['Azeret Mono'],
+      colors: {
+        primary: {
+          DEFAULT: '#3B82F6',
+          focus: '#2563EB',
+        },
       },
     },
   },
-  daisyui: {
-    themes: ['cmyk', 'winter'],
-  },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
-  darkMode: 'class',
-};
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+} 

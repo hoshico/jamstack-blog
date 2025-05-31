@@ -21,6 +21,7 @@ alwaysApply: true
 
 ## スタイル・デザイン
 - **Tailwind CSS**を利用し、ユーティリティクラスでスタイリング
+- v4を使用する
 - グローバルなカスタムCSSは`src/app/globals.css`に記述
 - Shikiで生成されるコードブロック（`pre.shiki`）には`globals.css`でパディング・マージン・角丸・横スクロールを付与
 - カスタムクラスや追加スタイルは`globals.css`に追記

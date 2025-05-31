@@ -14,19 +14,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: false
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
+      - name: Debug pnpm
+        run: |
+          which pnpm
+          pnpm -v
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Build Next.js app
-        run: pnpm build 
+        run: pnpm build

@@ -10,15 +10,15 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug pnpm
-        run: |
-          which pnpm
-          pnpm -v
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,11 +26,10 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
-          run_install: false
+      - name: Debug pnpm
+        run: |
+          which pnpm
+          pnpm -v
 
       - name: Install dependencies
         run: pnpm install

@@ -12,6 +12,9 @@ export default async function BlogPage({
     headers: {
       "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_MICROCMS_API_KEY!,
     },
+    next: {
+      revalidate: false,
+    },
   });
 
   if (response.status !== 200) {

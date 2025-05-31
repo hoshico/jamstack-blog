@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="bg-gray-300 text-gray-600">
       <div className="mx-auto w-11/12 2xl:w-8/12">
-        <div className="flex-1 flex justify-between py-4">
+        <div className="flex flex-1 justify-between py-4">
           <Link href="/" passHref>
             <p className="btn-ghost ml-2 text-3xl normal-case md:ml-5">
               <span className="text-primary">hoshi</span>
@@ -39,7 +39,7 @@ export default function Header() {
             </label>
           </div> */}
           <Link href="/about" passHref>
-            <p className="btn btn-ghost ml-1 mr-2 text-xl normal-case md:mr-5">
+            <p className="ml-1 mr-2 text-2xl normal-case text-gray-600 md:mr-5">
               about
             </p>
           </Link>

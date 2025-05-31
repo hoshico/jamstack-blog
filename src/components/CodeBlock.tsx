@@ -1,5 +1,3 @@
-"use client";
-
 import { BundledLanguage, codeToHtml } from "shiki";
 
 interface Props {

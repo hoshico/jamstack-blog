@@ -126,3 +126,48 @@ pre.shiki {
   border-radius: 0.5rem;
   overflow-x: auto;
 }
+
+/* CMSコンテンツ用のスタイル */
+.blog-content p {
+  font-size: 17px;
+  line-height: 2;
+  color: #333;
+}
+
+.blog-content a {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.blog-content ol {
+  list-style-type: disc;
+  padding-left: 1rem;
+  list-style-position: inside;
+}
+
+.blog-content ul li {
+  font-size: 17px;
+  line-height: 2;
+  color: #333;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-top: 5rem;
+}
+
+.blog-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}

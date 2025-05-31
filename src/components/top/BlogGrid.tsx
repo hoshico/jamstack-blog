@@ -14,7 +14,6 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
         blogs.map((blog) => (
           <li key={blog.id}>
             <ArticleCard blog={blog} />
-            {/* <BlogCard blog={blog} /> */}
           </li>
         ))
       ) : (

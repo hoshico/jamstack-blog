@@ -8,6 +8,9 @@ export default async function HomePage() {
       headers: {
         "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_MICROCMS_API_KEY!,
       },
+      next: {
+        revalidate: false,
+      },
     }
   );
   const blogs = blogData.data?.contents;

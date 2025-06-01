@@ -6,7 +6,7 @@ export default async function HomePage() {
     { limit: 40 },
     {
       headers: {
-        "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_MICROCMS_API_KEY!,
+        "X-MICROCMS-API-KEY": process.env.API_KEY!,
       },
       next: {
         revalidate: false,

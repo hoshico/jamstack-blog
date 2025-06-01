@@ -10,7 +10,7 @@ export default async function BlogPage({
 
   const response = await getBlogById(slug, {
     headers: {
-      "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_MICROCMS_API_KEY!,
+      "X-MICROCMS-API-KEY": process.env.API_KEY!,
     },
     next: {
       revalidate: false,

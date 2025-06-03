@@ -30,6 +30,7 @@ export async function POST(req: NextRequest) {
 
     // 特定の記事が更新された場合、その記事の詳細ページのみを再検証
     if (slug) {
+      console.log("🔥 revalidating: /blog/${slug}", slug);
       revalidatePath(`/blog/${slug}`);
     }
 

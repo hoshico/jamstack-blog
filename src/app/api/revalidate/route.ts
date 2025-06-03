@@ -24,6 +24,7 @@ export async function POST(req: NextRequest) {
     // 署名が正しい場合、JSONとしてパース
     const jsonBody = JSON.parse(body);
     const slug = jsonBody.slug;
+    console.log("🔥 jsonBody: ", jsonBody);
 
     // トップページを再検証（ISR）
     revalidatePath("/");

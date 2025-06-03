@@ -8,8 +8,17 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    const body = await req.json();
+    const slug = body.slug;
+
     // トップページを再検証（ISR）
     revalidatePath("/");
+
+    // 特定の記事が更新された場合、その記事の詳細ページのみを再検証
+    if (slug) {
+      revalidatePath(`/blog/${slug}`);
+    }
+
     return NextResponse.json({ revalidated: true });
   } catch (err) {
     return NextResponse.json(

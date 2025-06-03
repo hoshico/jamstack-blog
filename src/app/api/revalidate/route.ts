@@ -4,6 +4,12 @@ import { revalidatePath } from "next/cache";
 export async function POST(req: NextRequest) {
   const secret = req.headers.get("X-MICROCMS-Signature");
   if (secret !== process.env.REVALIDATE_SECRET_TOKEN) {
+    console.log("🔥secret情報: ", secret);
+    console.log(
+      "🔥REVALIDATE_SECRET_TOKEN:",
+      process.env.REVALIDATE_SECRET_TOKEN
+    );
+
     console.error("Invalid token");
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }

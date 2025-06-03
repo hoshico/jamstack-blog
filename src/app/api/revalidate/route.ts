@@ -1,22 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
+import crypto from "crypto";
 
 export async function POST(req: NextRequest) {
-  const secret = req.headers.get("X-MICROCMS-Signature");
-  if (secret !== process.env.REVALIDATE_SECRET_TOKEN) {
-    console.log("🔥secret情報: ", secret);
-    console.log(
-      "🔥REVALIDATE_SECRET_TOKEN:",
-      process.env.REVALIDATE_SECRET_TOKEN
-    );
-
-    console.error("Invalid token");
-    return NextResponse.json({ message: "Invalid token" }, { status: 401 });
-  }
-
   try {
-    const body = await req.json();
-    const slug = body.slug;
+    const signature = req.headers.get("X-MICROCMS-Signature");
+    const body = await req.text();
+
+    // 署名の検証
+    const expectedSignature = crypto
+      .createHmac("sha256", process.env.REVALIDATE_SECRET_TOKEN || "")
+      .update(body)
+      .digest("hex");
+
+    if (!signature || signature !== expectedSignature) {
+      console.error("Invalid signature");
+      return NextResponse.json(
+        { message: "Invalid signature" },
+        { status: 401 }
+      );
+    }
+
+    // 署名が正しい場合、JSONとしてパース
+    const jsonBody = JSON.parse(body);
+    const slug = jsonBody.slug;
 
     // トップページを再検証（ISR）
     revalidatePath("/");
@@ -28,7 +35,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ revalidated: true });
   } catch (err) {
-    console.log("🔥🔥🔥 Error revalidating");
+    console.error("Error revalidating:", err);
     return NextResponse.json(
       { message: "Error revalidating" },
       { status: 500 }

@@ -23,16 +23,16 @@ export async function POST(req: NextRequest) {
 
     // 署名が正しい場合、JSONとしてパース
     const jsonBody = JSON.parse(body);
-    const slug = jsonBody.slug;
+    const id = jsonBody.id;
     console.log("🔥 jsonBody: ", jsonBody);
 
     // トップページを再検証（ISR）
     revalidatePath("/");
 
     // 特定の記事が更新された場合、その記事の詳細ページのみを再検証
-    if (slug) {
-      console.log("🔥 revalidating: /blog/${slug}", slug);
-      revalidatePath(`/blog/${slug}`);
+    if (id) {
+      console.log("🔥 revalidating: /blog/${slug}", id);
+      revalidatePath(`/blog/${id}`);
     }
 
     return NextResponse.json({ revalidated: true });

@@ -1,7 +1,5 @@
-import { Blog } from "@/src/libs/api/generated";
-import BlogCard from "./BlogCard";
-import { Card } from "../ui/card";
 import ArticleCard from "../ArticleCard";
+import type { Blog } from "@/libs/api/generated";
 
 type BlogGridProps = {
   blogs: Blog[];
@@ -9,7 +7,7 @@ type BlogGridProps = {
 
 export default function BlogGrid({ blogs }: BlogGridProps) {
   return (
-    <ul className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
       {blogs?.length ? (
         blogs.map((blog) => (
           <li key={blog.id}>

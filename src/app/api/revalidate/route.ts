@@ -10,6 +10,10 @@ export async function POST(req: NextRequest) {
     // デバッグ用：署名をログ出力
     console.log(" Received signature:", signature);
     console.log("🔥 Body:", body);
+    console.log(
+      "🔥 REVALIDATE_SECRET_TOKEN:",
+      process.env.REVALIDATE_SECRET_TOKEN
+    );
 
     // 一時的に署名検証をスキップ（本番では削除）
     if (process.env.NODE_ENV === "development") {
@@ -20,6 +24,9 @@ export async function POST(req: NextRequest) {
         .createHmac("sha256", process.env.REVALIDATE_SECRET_TOKEN || "")
         .update(body)
         .digest("hex");
+
+      console.log("🔥 Expected signature:", expectedSignature);
+      console.log("🔥 Signatures match:", signature === expectedSignature);
 
       if (!signature || signature !== expectedSignature) {
         console.error("Invalid signature");

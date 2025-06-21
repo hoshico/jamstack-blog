@@ -16,9 +16,11 @@ export default async function HomePage() {
   );
   const blogs = blogData.data?.contents;
 
+  const generatedAt = new Date().toISOString();
+
   return (
     <div className="min-h-screen py-6 sm:px-10">
-      <BlogGrid blogs={blogs || []} />
+      <BlogGrid blogs={blogs || []} generatedAt={generatedAt} />
     </div>
   );
 }

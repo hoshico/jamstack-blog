@@ -5,11 +5,12 @@ import { Switch } from "../ui/switch";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function AboutDetail() {
+export default function AboutDetail({ generatedAt }: { generatedAt: string }) {
   const [isDiagonal, setIsDiagonal] = useState(false);
 
   return (
     <>
+      <p>検証用: 🕰️{generatedAt}</p>
       {/* md以上: アニメーション付き */}
       <div className="mx-auto hidden w-[65ch] md:block">
         <div className="flex justify-end">

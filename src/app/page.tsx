@@ -1,12 +1,13 @@
 import BlogGrid from "../components/top/BlogGrid";
 import { getBlogs } from "../libs/api/generated";
+import { API_KEY } from "../libs/config";
 
 export default async function HomePage() {
   const blogData = await getBlogs(
     { limit: 40 },
     {
       headers: {
-        "X-MICROCMS-API-KEY": process.env.API_KEY!,
+        "X-MICROCMS-API-KEY": API_KEY,
       },
       next: {
         revalidate: false,
@@ -15,9 +16,11 @@ export default async function HomePage() {
   );
   const blogs = blogData.data?.contents;
 
+  const generatedAt = new Date().toISOString();
+
   return (
     <div className="min-h-screen py-6 sm:px-10">
-      <BlogGrid blogs={blogs || []} />
+      <BlogGrid blogs={blogs || []} generatedAt={generatedAt} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import AboutDetail from "@/src/components/about/AboutDetail";
 
 export default async function Aboutage() {
-  return <AboutDetail />;
+  const generatedAt = new Date().toISOString();
+  return <AboutDetail generatedAt={generatedAt} />;
 }

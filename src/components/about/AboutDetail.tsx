@@ -5,16 +5,18 @@ import { Switch } from "../ui/switch";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function AboutDetail({ generatedAt }: { generatedAt: string }) {
+export default function AboutDetail() {
   const [isDiagonal, setIsDiagonal] = useState(false);
 
   return (
     <>
-      <p>検証用: 🕰️{generatedAt}</p>
       {/* md以上: アニメーション付き */}
       <div className="mx-auto hidden w-[65ch] md:block">
         <div className="flex justify-end">
-          <Switch checked={isDiagonal} onCheckedChange={setIsDiagonal} />
+          <div className="flex flex-row items-center gap-2">
+            <p className="animate-bounce font-bold">click me</p>
+            <Switch checked={isDiagonal} onCheckedChange={setIsDiagonal} />
+          </div>
         </div>
 
         <div
@@ -41,20 +43,23 @@ export default function AboutDetail({ generatedAt }: { generatedAt: string }) {
                 <p className="text-lg leading-10">東京在住</p>
                 <p className="text-lg leading-10">2021年よりエンジニア</p>
               </div>
-              <div
-                className={`duration-800 transition-all delay-300 ${
-                  isDiagonal ? "scale-100 opacity-100" : "scale-95 opacity-0"
-                }`}
+              <Link
+                href="https://github.com/hoshico"
+                className={!isDiagonal ? "pointer-events-none" : ""}
               >
-                <Link href="https://github.com/hoshico">
+                <div
+                  className={`duration-800 transition-all delay-300 ${
+                    isDiagonal ? "scale-100 opacity-100" : "scale-95 opacity-0"
+                  }`}
+                >
                   <Image
                     src="/icons/github.svg"
                     alt="Logo"
                     width={40}
                     height={40}
                   />
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
             <p className="mb-2 text-lg leading-10">使用技術: </p>
             <ol className="transform-3d perspective-distant pl-0">

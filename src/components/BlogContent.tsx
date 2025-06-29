@@ -1,15 +1,14 @@
 import parse, { Element } from "html-react-parser";
 import CodeBlock from "./CodeBlock";
-import type { Blog } from "@/libs/api/generated";
+import type { Blog } from "@/src/libs/api/generated";
 import { format } from "date-fns";
 import TableOfContents from "./blog/TableOfContents";
 
 interface BlogContentProps {
   blog: Blog;
-  generatedAt: string;
 }
 
-export default function BlogContent({ blog, generatedAt }: BlogContentProps) {
+export default function BlogContent({ blog }: BlogContentProps) {
   const parsed = parse(blog.body || "", {
     replace: (domNode) => {
       if (domNode instanceof Element && domNode.name === "pre") {
@@ -27,7 +26,6 @@ export default function BlogContent({ blog, generatedAt }: BlogContentProps) {
 
   return (
     <div data-theme="winter">
-      <p>検証用: 🕰️{generatedAt}</p>
       <div className="bg-linear-to-b from-primary-content via-info to-neutral-content dark:from-base-content dark:to-base-content m-auto w-full">
         <div className="min-h-screen">
           <div className="py-20">

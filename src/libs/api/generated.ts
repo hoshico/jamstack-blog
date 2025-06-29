@@ -54,6 +54,10 @@ export type GetBlogsParams = {
 limit?: number;
 };
 
+export type GetCategories200 = {
+  data?: CategoryList;
+};
+
 /**
  * @summary Get Blog List
  */
@@ -103,10 +107,51 @@ export const getBlogs = async (params?: GetBlogsParams, options?: RequestInit): 
 
 
 /**
+ * @summary Get Blog by ID
+ */
+export type getBlogByIdResponse200 = {
+  data: Blog
+  status: 200
+}
+    
+export type getBlogByIdResponseComposite = getBlogByIdResponse200;
+    
+export type getBlogByIdResponse = getBlogByIdResponseComposite & {
+  headers: Headers;
+}
+
+export const getGetBlogByIdUrl = (id: string,) => {
+
+
+  
+
+  return `https://2525hoshi.microcms.io/api/v1/blog/${id}`
+}
+
+export const getBlogById = async (id: string, options?: RequestInit): Promise<getBlogByIdResponse> => {
+  
+  const res = await fetch(getGetBlogByIdUrl(id),
+  {      
+    ...options,
+    method: 'GET'
+    
+    
+  }
+)
+
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text()
+  const data: getBlogByIdResponse['data'] = body ? JSON.parse(body) : {}
+
+  return { data, status: res.status, headers: res.headers } as getBlogByIdResponse
+}
+
+
+
+/**
  * @summary Get Category List
  */
 export type getCategoriesResponse200 = {
-  data: CategoryList
+  data: GetCategories200
   status: 200
 }
     

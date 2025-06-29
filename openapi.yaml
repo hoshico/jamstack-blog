@@ -20,10 +20,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/BlogList'
+                $ref: '#/components/schemas/BlogList'
   /blog/{id}:
     get:
       summary: Get Blog by ID

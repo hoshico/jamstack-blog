@@ -5,13 +5,14 @@ import HeroSection from "@/src/components/top/HeroSection";
 import { getBlogListByCategory } from "@/src/libs/getBlogListByCategory";
 
 type CategoryPageProps = {
-  params: {
+  params: Promise<{
     "category-id"?: string;
-  };
+  }>;
 };
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
-  const categoryId = params["category-id"];
+  const resolvedParams = await params;
+  const categoryId = resolvedParams["category-id"];
 
   if (!categoryId) {
     notFound();

@@ -40,7 +40,6 @@ export type CategoryImage = {
 export interface Category {
   id: string;
   name: string;
-  slug: string;
   image: CategoryImage;
 }
 
@@ -53,6 +52,10 @@ export interface CategoryList {
 
 export type GetBlogsParams = {
 limit?: number;
+/**
+ * Filter expression such as "category[contains]typescript"
+ */
+filters?: string;
 };
 
 /**

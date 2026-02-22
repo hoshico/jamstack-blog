@@ -5,6 +5,7 @@ import type { Blog } from "@/src/libs/api/generated";
 
 type BlogGridProps = {
   blogs: Blog[];
+  categoryId?: string;
 };
 
 const createExcerpt = (body?: string, limit = 120) => {
@@ -26,8 +27,7 @@ const createExcerpt = (body?: string, limit = 120) => {
     : plainText;
 };
 
-export default function BlogGrid({ blogs }: BlogGridProps) {
-  console.log("🔥", blogs);
+export default function BlogGrid({ blogs, categoryId }: BlogGridProps) {
   if (!blogs?.length) {
     return (
       <p className="rounded-[28px] border border-dashed border-gray-300 bg-white/60 py-16 text-center text-lg font-semibold text-gray-500">
@@ -48,7 +48,7 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
         return (
           <article
             key={blog.id}
-            className="group rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md focus-within:ring-2 focus-within:ring-gray-300 sm:p-8"
+            className="group rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-sm ring-1 ring-black/5 transition focus-within:ring-2 focus-within:ring-gray-300 hover:-translate-y-0.5 hover:shadow-md sm:p-8"
           >
             <Link
               href={`/blog/${blog.id}`}
@@ -72,8 +72,14 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
               <div className="mt-5 flex flex-wrap gap-2">
                 {blog.category.map((category, index) => (
                   <span
-                    key={category?.id ?? `${blog.id}-${category?.name ?? index}`}
-                    className="rounded-full border border-gray-200 bg-white px-4 py-1 text-[11px] font-semibold tracking-[0.2em] text-gray-500"
+                    key={
+                      category?.id ?? `${blog.id}-${category?.name ?? index}`
+                    }
+                    className={`rounded-full border  px-4 py-1 text-[11px] font-semibold tracking-[0.2em] text-gray-500 ${
+                      category?.id === categoryId
+                        ? "border-black bg-black text-white ring-2 ring-black/70"
+                        : "border-gray-200 text-gray-500"
+                    }`}
                   >
                     {category?.name ?? "CATEGORY"}
                   </span>

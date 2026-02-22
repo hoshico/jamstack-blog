@@ -1,21 +1,14 @@
-// import { Search } from "lucide-react";
-
-const mockCategories = [
-  "BACKEND",
-  "DX",
-  "FRONTEND",
-  "GOOGLE",
-  "NEST.JS",
-  "NEXT.JS",
-  "NODE.JS",
-  "OAUTH",
-  "REACT",
-  "TYPESCRIPT",
-  "VSCODE",
-];
 import Link from "next/link";
 import { getCategoryList } from "../../libs/getCategoryList";
-export default async function HeroSection() {
+type HeroSectionProps = {
+  activeCategoryId?: string;
+  showClearFilter?: boolean;
+};
+
+export default async function HeroSection({
+  activeCategoryId,
+  showClearFilter,
+}: HeroSectionProps = {}) {
   const categories = await getCategoryList();
 
   return (
@@ -28,7 +21,7 @@ export default async function HeroSection() {
           Hoshico Notes
         </h1>
         <p className="text-lg leading-8 text-gray-500 sm:text-xl">
-          フロントエンドからバックエンドまで、日々の開発で学んだことや技術的な備忘録を綴っています。
+          日々の開発で学んだことや技術的な備忘録を綴っています。
         </p>
       </div>
 
@@ -51,17 +44,33 @@ export default async function HeroSection() {
       </div> */}
 
       {/* TODO: カテゴリーページへのリンク実装(idでなくcategoryのnameでリンクする) */}
-      {/* <div className="mt-8 flex flex-wrap gap-2">
-        {categories.contents?.map((category) => (
+      <div className="mt-8 flex flex-wrap items-center gap-2">
+        {categories.contents?.map((category) => {
+          const isActive = category.id === activeCategoryId;
+
+          return (
+            <Link
+              key={category.id}
+              href={`/category/${category.id}`}
+              className={`rounded-full border px-4 py-2 text-xs font-semibold tracking-wide shadow-sm transition ${
+                isActive
+                  ? "border-black bg-black text-white ring-2 ring-black/70"
+                  : "border-gray-200 bg-white/90 text-gray-600 hover:border-gray-300 hover:text-gray-800"
+              }`}
+            >
+              {category.name}
+            </Link>
+          );
+        })}
+        {showClearFilter && (
           <Link
-            key={category.id}
-            href={`/category/${category.id}`}
-            className="rounded-full border border-gray-200 bg-white/90 px-4 py-2 text-xs font-semibold tracking-wide text-gray-600 shadow-sm"
+            href="/"
+            className="ml-2 text-xs font-semibold uppercase tracking-[0.3em] text-blue-600 transition hover:text-blue-500"
           >
-            {category.name}
+            クリア
           </Link>
-        ))}
-      </div> */}
+        )}
+      </div>
     </section>
   );
 }

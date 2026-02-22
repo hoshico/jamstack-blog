@@ -11,7 +11,7 @@ export default function Header() {
           href="/"
           className="text-2xl font-semibold tracking-tight text-gray-900"
         >
-          TOP
+          Hoshico Notes
         </Link>
         <nav className="flex items-center gap-5 text-sm font-medium text-gray-500">
           <Link href="/about" className="transition hover:text-gray-900">

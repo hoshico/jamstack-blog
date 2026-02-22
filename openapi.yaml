@@ -14,6 +14,11 @@ paths:
           in: query
           schema:
             type: number
+        - name: filters
+          in: query
+          description: Filter expression such as "category[contains]typescript"
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -110,8 +115,6 @@ components:
           type: string
         name:
           type: string
-        slug:
-          type: string
         image:
           type: object
           properties:
@@ -124,7 +127,6 @@ components:
       required:
         - id
         - name
-        - slug
         - image
     CategoryList:
       type: object

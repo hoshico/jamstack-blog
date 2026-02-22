@@ -38,9 +38,10 @@ export type CategoryImage = {
 };
 
 export interface Category {
-  id?: string;
-  name?: string;
-  image?: CategoryImage;
+  id: string;
+  name: string;
+  slug: string;
+  image: CategoryImage;
 }
 
 export interface CategoryList {
@@ -52,10 +53,6 @@ export interface CategoryList {
 
 export type GetBlogsParams = {
 limit?: number;
-};
-
-export type GetCategories200 = {
-  data?: CategoryList;
 };
 
 /**
@@ -151,7 +148,7 @@ export const getBlogById = async (id: string, options?: RequestInit): Promise<ge
  * @summary Get Category List
  */
 export type getCategoriesResponse200 = {
-  data: GetCategories200
+  data: CategoryList
   status: 200
 }
     

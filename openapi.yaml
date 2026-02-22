@@ -52,10 +52,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/CategoryList'
+                $ref: '#/components/schemas/CategoryList'
 components:
   securitySchemes:
     apiKey:
@@ -113,6 +110,8 @@ components:
           type: string
         name:
           type: string
+        slug:
+          type: string
         image:
           type: object
           properties:
@@ -122,6 +121,11 @@ components:
               type: integer
             width:
               type: integer
+      required:
+        - id
+        - name
+        - slug
+        - image
     CategoryList:
       type: object
       properties:

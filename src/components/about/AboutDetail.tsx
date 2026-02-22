@@ -39,10 +39,10 @@ export default function AboutDetail() {
 
           <div className="about-contents mt-4">
             <div className="flex flex-row justify-between gap-2">
-              <div className="gap-2">
+              {/* <div className="gap-2">
                 <p className="text-lg leading-10">東京在住</p>
                 <p className="text-lg leading-10">2021年よりエンジニア</p>
-              </div>
+              </div> */}
               <Link
                 href="https://github.com/hoshico"
                 className={!isDiagonal ? "pointer-events-none" : ""}
@@ -61,8 +61,8 @@ export default function AboutDetail() {
                 </div>
               </Link>
             </div>
-            <p className="mb-2 text-lg leading-10">使用技術: </p>
-            <ol className="transform-3d perspective-distant pl-0">
+            {/* <p className="mb-2 text-lg leading-10">使用技術: </p> */}
+            <ol className="transform-3d perspective-distant mt-4 pl-0">
               <li
                 className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
                   isDiagonal && "translate-z-[200px] shadow-md"

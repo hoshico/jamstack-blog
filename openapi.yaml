@@ -14,6 +14,11 @@ paths:
           in: query
           schema:
             type: number
+        - name: filters
+          in: query
+          description: Filter expression such as "category[contains]typescript"
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -52,10 +57,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/CategoryList'
+                $ref: '#/components/schemas/CategoryList'
 components:
   securitySchemes:
     apiKey:
@@ -122,6 +124,10 @@ components:
               type: integer
             width:
               type: integer
+      required:
+        - id
+        - name
+        - image
     CategoryList:
       type: object
       properties:

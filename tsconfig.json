@@ -35,6 +35,7 @@
     "**/*.tsx",
     "src/libs/client.js",
     "src/libs/render-toc.ts",
+    "css.d.ts",
     "next-env.d.ts",
     "_pages/_app.tsx",
     ".next/types/**/*.ts",

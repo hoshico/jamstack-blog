@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import BlogGrid from "@/src/components/top/BlogGrid";
@@ -9,6 +10,22 @@ type CategoryPageProps = {
     "category-id"?: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: CategoryPageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const categoryId = resolvedParams["category-id"];
+
+  if (!categoryId) {
+    return { title: "Category" };
+  }
+
+  return {
+    title: `#${categoryId}`,
+    description: `${categoryId} カテゴリの記事一覧`,
+  };
+}
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const resolvedParams = await params;

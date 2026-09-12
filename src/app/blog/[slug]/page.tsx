@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { Blog } from "@/src/libs/api/generated";
 import BlogContent from "@/src/components/BlogContent";
 import { getBlogDataById } from "@/src/libs/getBlogDataById";
@@ -13,6 +14,19 @@ export async function generateStaticParams() {
       slug: blog.id || "",
     })) || []
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlogDataById(slug);
+
+  return {
+    title: blog.title || "記事",
+  };
 }
 
 export default async function BlogPage({

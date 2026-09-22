@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AboutDetail from "@/src/components/about/AboutDetail";
+import PageTransition from "@/src/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "About",
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Aboutage() {
-  return <AboutDetail />;
+  return (
+    <PageTransition>
+      <AboutDetail />
+    </PageTransition>
+  );
 }

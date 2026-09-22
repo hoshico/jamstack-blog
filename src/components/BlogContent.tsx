@@ -1,4 +1,5 @@
 import parse, { Element } from "html-react-parser";
+import { ViewTransition } from "react";
 import CodeBlock from "./CodeBlock";
 import type { Blog } from "@/src/libs/api/generated";
 import { format } from "date-fns";
@@ -30,9 +31,15 @@ export default function BlogContent({ blog }: BlogContentProps) {
         <div className="min-h-screen">
           <div className="py-20">
             <div className="dark:text-base-100 mx-auto md:max-w-7xl">
-              <div className="px-8 text-center font-extrabold tracking-wider md:text-4xl">
-                {blog.title}
-              </div>
+              <ViewTransition
+                name={`blog-title-${blog.id}`}
+                share="morph"
+                default="none"
+              >
+                <div className="px-8 text-center font-extrabold tracking-wider md:text-4xl">
+                  {blog.title}
+                </div>
+              </ViewTransition>
               <div className="m-auto mt-5 px-8 md:w-32 md:px-0">
                 <p className="dark:text-base-100 text-center text-sm text-gray-500">
                   {blog.publishedAt && (

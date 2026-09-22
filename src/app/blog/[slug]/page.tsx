@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Blog } from "@/src/libs/api/generated";
 import BlogContent from "@/src/components/BlogContent";
+import PageTransition from "@/src/components/PageTransition";
 import { getBlogDataById } from "@/src/libs/getBlogDataById";
 import { getBlogList } from "@/src/libs/getBlogList";
 
@@ -37,5 +38,9 @@ export default async function BlogPage({
   const { slug } = await params;
   const blog = await getBlogDataById(slug);
 
-  return <BlogContent blog={blog} />;
+  return (
+    <PageTransition>
+      <BlogContent blog={blog} />
+    </PageTransition>
+  );
 }

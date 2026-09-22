@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getCategoryList } from "../../libs/getCategoryList";
+
 type HeroSectionProps = {
   activeCategoryId?: string;
   showClearFilter?: boolean;
@@ -43,7 +44,7 @@ export default async function HeroSection({
         <p className="text-xs text-gray-400">※ 検索機能はモックです</p>
       </div> */}
 
-      {/* TODO: カテゴリーページへのリンク実装(idでなくcategoryのnameでリンクする) */}
+      {/* カテゴリ切替はスライドせずリストのクロスフェードに任せる */}
       <div className="mt-8 flex flex-wrap items-center gap-2">
         {categories.contents?.map((category) => {
           const isActive = category.id === activeCategoryId;

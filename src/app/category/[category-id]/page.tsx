@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ViewTransition } from "react";
 
 import BlogGrid from "@/src/components/top/BlogGrid";
 import HeroSection from "@/src/components/top/HeroSection";
+import PageTransition from "@/src/components/PageTransition";
 import { getBlogListByCategory } from "@/src/libs/getBlogListByCategory";
 
 type CategoryPageProps = {
@@ -38,10 +40,20 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const blogs = await getBlogListByCategory({ categoryId });
 
   return (
-    <div className="space-y-10 pb-16 pt-8 sm:pt-10">
-      <HeroSection activeCategoryId={categoryId} showClearFilter />
-      <h3 className="animate-bounce text-2xl font-bold">#{categoryId} 👇</h3>
-      <BlogGrid blogs={blogs || []} categoryId={categoryId} />
-    </div>
+    <PageTransition>
+      <div className="space-y-10 pb-16 pt-8 sm:pt-10">
+        <HeroSection activeCategoryId={categoryId} showClearFilter />
+        <h3 className="animate-bounce text-2xl font-bold">#{categoryId} 👇</h3>
+        <ViewTransition
+          key={categoryId}
+          name="blog-list"
+          share="auto"
+          enter="auto"
+          default="none"
+        >
+          <BlogGrid blogs={blogs || []} categoryId={categoryId} />
+        </ViewTransition>
+      </div>
+    </PageTransition>
   );
 }

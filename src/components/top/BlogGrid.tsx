@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { ViewTransition } from "react";
 
 import FormatDate from "../FormatDate";
+import ViewTransitionLink from "../ViewTransitionLink";
 import type { Blog } from "@/src/libs/api/generated";
 
 type BlogGridProps = {
@@ -50,8 +51,9 @@ export default function BlogGrid({ blogs, categoryId }: BlogGridProps) {
             key={blog.id}
             className="group rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-sm ring-1 ring-black/5 transition focus-within:ring-2 focus-within:ring-gray-300 hover:-translate-y-0.5 hover:shadow-md sm:p-8"
           >
-            <Link
+            <ViewTransitionLink
               href={`/blog/${blog.id}`}
+              transitionTypes={["nav-forward"]}
               className="block space-y-4 outline-none focus-visible:outline-none"
             >
               {blog.publishedAt && (
@@ -61,13 +63,19 @@ export default function BlogGrid({ blogs, categoryId }: BlogGridProps) {
                   className="text-xs tracking-[0.35em] text-gray-400"
                 />
               )}
-              <h2 className="text-2xl font-semibold tracking-tight text-gray-900 transition group-hover:text-gray-950 sm:text-[2rem]">
-                {blog.title}
-              </h2>
+              <ViewTransition
+                name={`blog-title-${blog.id}`}
+                share="morph"
+                default="none"
+              >
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900 transition group-hover:text-gray-950 sm:text-[2rem]">
+                  {blog.title}
+                </h2>
+              </ViewTransition>
               <p className="text-base leading-relaxed text-gray-500 sm:text-lg">
                 {excerpt}
               </p>
-            </Link>
+            </ViewTransitionLink>
             {blog.category && blog.category.length > 0 && (
               <div className="mt-5 flex flex-wrap gap-2">
                 {blog.category.map((category, index) => (

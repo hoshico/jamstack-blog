@@ -266,3 +266,56 @@ pre.shiki {
     animation-delay: 0s !important;
   }
 }
+
+/* about: 3D skill bars */
+.skill-chart {
+  perspective: 1400px;
+}
+
+.skill-chart-stage {
+  --rx: 18deg;
+  --ry: -14deg;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transform-origin: center bottom;
+}
+
+.skill-bar {
+  --d: 18px;
+  --bar-w: 2.75rem;
+  width: var(--bar-w);
+  height: var(--h);
+  transform-style: preserve-3d;
+}
+
+.skill-bar-face {
+  position: absolute;
+  transform-style: preserve-3d;
+  border-radius: 4px;
+}
+
+.skill-bar-front {
+  inset: 0;
+  transform: translateZ(calc(var(--d) / 2));
+  box-shadow: 8px 18px 24px rgb(0 0 0 / 0.35);
+}
+
+.skill-bar-side {
+  top: 0;
+  height: 100%;
+  width: var(--d);
+  left: calc(50% - var(--d) / 2);
+  transform: rotateY(90deg) translateZ(calc(var(--bar-w) / 2));
+}
+
+.skill-bar-top {
+  left: 0;
+  width: 100%;
+  height: var(--d);
+  top: calc(50% - var(--d) / 2);
+  transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+}
+
+.skill-bar-label {
+  transform: rotateY(calc(var(--ry) * -1)) rotateX(calc(var(--rx) * -1));
+}

@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { Github } from "lucide-react";
 import ViewTransitionLink from "./ViewTransitionLink";
 
 export default function Header() {
@@ -26,21 +24,6 @@ export default function Header() {
           >
             about
           </ViewTransitionLink>
-          <span
-            className="hidden h-5 w-px bg-gray-200 sm:block"
-            aria-hidden="true"
-          />
-          <div className="flex items-center gap-3 text-gray-500">
-            <a
-              href="https://github.com/hoshico"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="transition hover:text-gray-900"
-            >
-              <Github className="h-5 w-5" strokeWidth={1.6} />
-            </a>
-          </div>
         </nav>
       </div>
     </header>

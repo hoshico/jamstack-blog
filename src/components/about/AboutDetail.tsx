@@ -1,253 +1,146 @@
-"use client";
-
 import Image from "next/image";
-import { Switch } from "../ui/switch";
-import { useState } from "react";
 import Link from "next/link";
 
+type Skill = {
+  name: string;
+  icon: string;
+  height: number;
+  front: string;
+  side: string;
+  top: string;
+};
+
+const skills: Skill[] = [
+  {
+    name: "React",
+    icon: "/icons/react.svg",
+    height: 210,
+    front: "from-blue-300 to-blue-500",
+    side: "bg-blue-700",
+    top: "bg-blue-200",
+  },
+  {
+    name: "Next.js",
+    icon: "/icons/next.svg",
+    height: 210,
+    front: "from-blue-400 to-blue-600",
+    side: "bg-blue-800",
+    top: "bg-blue-300",
+  },
+  {
+    name: "TypeScript",
+    icon: "/icons/typescript.svg",
+    height: 210,
+    front: "from-indigo-400 to-indigo-600",
+    side: "bg-indigo-800",
+    top: "bg-indigo-300",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "/icons/tailwindcss.svg",
+    height: 210,
+    front: "from-violet-400 to-violet-600",
+    side: "bg-violet-800",
+    top: "bg-violet-300",
+  },
+  {
+    name: "Node.js",
+    icon: "/icons/node.svg",
+    height: 130,
+    front: "from-purple-400 to-purple-600",
+    side: "bg-purple-800",
+    top: "bg-purple-300",
+  },
+  {
+    name: "Express",
+    icon: "/icons/express.svg",
+    height: 130,
+    front: "from-fuchsia-400 to-fuchsia-600",
+    side: "bg-fuchsia-800",
+    top: "bg-fuchsia-300",
+  },
+  {
+    name: "Fastify",
+    icon: "/icons/fastify.svg",
+    height: 72,
+    front: "from-pink-400 to-pink-500",
+    side: "bg-pink-700",
+    top: "bg-pink-300",
+  },
+];
+
 export default function AboutDetail() {
-  const [isDiagonal, setIsDiagonal] = useState(false);
-
   return (
-    <>
-      {/* md以上: アニメーション付き */}
-      <div className="mx-auto hidden w-[65ch] md:block">
-        <div className="flex justify-end">
-          <div className="flex flex-row items-center gap-2">
-            <p className="animate-bounce font-bold">click me</p>
-            <Switch checked={isDiagonal} onCheckedChange={setIsDiagonal} />
-          </div>
+    <div className="mx-auto w-full max-w-3xl">
+      <div className="mb-8 flex items-end justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">hoshico</h1>
+          <p className="mt-3 text-lg leading-8 text-gray-500">東京在住</p>
+          <p className="text-lg leading-8 text-gray-500">
+            デブ猫が好き
+          </p>
         </div>
-
-        <div
-          className={`mt-10 w-full p-6 shadow-lg transition-all duration-700 ${
-            isDiagonal &&
-            "perspective-distant rotate-x-51 rotate-z-33 transform-3d transform-style-preserve-3d relative"
-          }`}
+        <Link
+          href="https://github.com/hoshico"
+          aria-label="GitHub"
+          className="shrink-0"
         >
-          <div className="flex flex-row items-center justify-between">
-            <div className="flex flex-col">
-              <h1
-                className={`duration-1500 text-2xl font-bold transition-all ${
-                  isDiagonal && "translate-x-130"
-                }`}
-              >
-                hoshico
-              </h1>
-            </div>
-          </div>
+          <Image src="/icons/github.svg" alt="" width={40} height={40} />
+        </Link>
+      </div>
 
-          <div className="about-contents mt-4">
-            <div className="flex flex-row justify-between gap-2">
-              {/* <div className="gap-2">
-                <p className="text-lg leading-10">東京在住</p>
-                <p className="text-lg leading-10">2021年よりエンジニア</p>
-              </div> */}
-              <Link
-                href="https://github.com/hoshico"
-                className={!isDiagonal ? "pointer-events-none" : ""}
-              >
-                <div
-                  className={`duration-800 transition-all delay-300 ${
-                    isDiagonal ? "scale-100 opacity-100" : "scale-95 opacity-0"
-                  }`}
+      <section className="relative overflow-hidden rounded-3xl bg-[#0b1220] px-4 pt-8 pb-12 shadow-2xl sm:px-8 sm:pt-10 sm:pb-16">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-[-10%] bottom-0 h-56 origin-bottom opacity-80"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(148,163,184,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.16) 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+            transform: "perspective(500px) rotateX(68deg)",
+            maskImage: "linear-gradient(to top, black 20%, transparent 85%)",
+          }}
+        />
+
+        <div className="relative">
+          <h2 className="text-lg font-semibold text-white">SKILLS</h2>
+
+          <div className="skill-chart mt-2 overflow-x-auto px-6 pt-24 pb-14 sm:px-8 sm:pt-28">
+            <ul className="skill-chart-stage mx-auto flex w-max items-end gap-4 sm:gap-6">
+              {skills.map((skill) => (
+                <li
+                  key={skill.name}
+                  className="flex w-[2.75rem] min-w-[2.75rem] max-w-[2.75rem] shrink-0 flex-col items-center"
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  <Image
-                    src="/icons/github.svg"
-                    alt="Logo"
-                    width={40}
-                    height={40}
-                  />
-                </div>
-              </Link>
-            </div>
-            {/* <p className="mb-2 text-lg leading-10">使用技術: </p> */}
-            <ol className="transform-3d perspective-distant mt-4 pl-0">
-              <li
-                className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
-                  isDiagonal && "translate-z-[200px] shadow-md"
-                }`}
-              >
-                <div className="flex flex-row items-center gap-2">
-                  React
-                  <Image
-                    src="/icons/react.svg"
-                    alt="Logo"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </li>
-              <li
-                className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
-                  isDiagonal &&
-                  "translate-z-[200px] translate-x-[-10px] shadow-md"
-                }`}
-              >
-                <div className="flex flex-row items-center gap-2">
-                  Next.js
-                  <Image
-                    src="/icons/next.svg"
-                    alt="Logo"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </li>
-              <li
-                className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
-                  isDiagonal &&
-                  "translate-z-[230px] translate-x-[-10px] shadow-md"
-                }`}
-              >
-                <div className="flex flex-row items-center gap-2">
-                  TypeScript
-                  <Image
-                    src="/icons/typescript.svg"
-                    alt="Logo"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </li>
-              <li
-                className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
-                  isDiagonal &&
-                  "translate-z-[180px] translate-x-[-10px] shadow-md"
-                }`}
-              >
-                <div className="flex flex-row items-center gap-2">
-                  Tailwind CSS
-                  <Image
-                    src="/icons/tailwindcss.svg"
-                    alt="Logo"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </li>
-              <li
-                className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
-                  isDiagonal &&
-                  "translate-z-[200px] translate-x-[-10px] shadow-md"
-                }`}
-              >
-                <div className="flex flex-row items-center gap-2">
-                  Node.js
-                  <Image
-                    src="/icons/node.svg"
-                    alt="Logo"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </li>
-              <li
-                className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
-                  isDiagonal &&
-                  "translate-z-[200px] translate-x-[-10px] shadow-md"
-                }`}
-              >
-                <div className="flex flex-row items-center gap-2">
-                  Express
-                  <Image
-                    src="/icons/express.svg"
-                    alt="Logo"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </li>
-              <li
-                className={`flex items-center gap-2 transition-all duration-700 before:mr-2 before:text-2xl before:content-['•'] ${
-                  isDiagonal &&
-                  "translate-z-[110px] translate-x-[-10px] shadow-md"
-                }`}
-              >
-                <div className="flex flex-row items-center gap-2">
-                  Fastify
-                  <Image
-                    src="/icons/fastify.svg"
-                    alt="Logo"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </li>
-            </ol>
+                  <div
+                    className="skill-bar relative"
+                    style={{ ["--h" as string]: `${skill.height}px` }}
+                  >
+                    <div
+                      className={`skill-bar-face skill-bar-top ${skill.top}`}
+                    />
+                    <div
+                      className={`skill-bar-face skill-bar-side ${skill.side}`}
+                    />
+                    <div
+                      className={`skill-bar-face skill-bar-front bg-linear-to-b ${skill.front}`}
+                    />
+                  </div>
+                  <div className="skill-bar-label mt-6 flex w-full min-w-0 flex-col items-center gap-1.5">
+                    <span className="flex size-8 items-center justify-center rounded-full bg-white shadow-sm">
+                      <Image src={skill.icon} alt="" width={18} height={18} />
+                    </span>
+                    <span className="min-w-0 whitespace-nowrap text-center text-[11px] leading-tight text-slate-200">
+                      {skill.name}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </div>
-
-      {/* md以下: シンプル表示 */}
-      <div className="mx-auto block w-full max-w-[95vw] p-4 md:hidden">
-        <div className="w-full rounded-lg bg-white p-4 shadow-lg">
-          <div className="flex flex-row items-center justify-between">
-            <h1 className="mb-2 text-2xl font-bold">hoshico</h1>
-            <Link href="https://github.com/hoshico">
-              <Image
-                src="/icons/github.svg"
-                alt="Logo"
-                width={40}
-                height={40}
-              />
-            </Link>
-          </div>
-          <p className="text-lg leading-10">東京在住</p>
-          <p className="text-lg leading-10">2021年よりエンジニア</p>
-          <p className="mb-2 text-lg leading-10">使用技術: </p>
-          <ol className="list-inside list-disc pl-5">
-            <li className="flex items-center gap-2 text-lg leading-8">
-              React{" "}
-              <Image src="/icons/react.svg" alt="Logo" width={25} height={25} />
-            </li>
-            <li className="flex items-center gap-2 text-lg leading-8">
-              Next.js{" "}
-              <Image src="/icons/next.svg" alt="Logo" width={25} height={25} />
-            </li>
-            <li className="flex items-center gap-2 text-lg leading-8">
-              TypeScript{" "}
-              <Image
-                src="/icons/typescript.svg"
-                alt="Logo"
-                width={25}
-                height={25}
-              />
-            </li>
-            <li className="flex items-center gap-2 text-lg leading-8">
-              Tailwind CSS{" "}
-              <Image
-                src="/icons/tailwindcss.svg"
-                alt="Logo"
-                width={25}
-                height={25}
-              />
-            </li>
-            <li className="flex items-center gap-2 text-lg leading-8">
-              Node.js{" "}
-              <Image src="/icons/node.svg" alt="Logo" width={25} height={25} />
-            </li>
-            <li className="flex items-center gap-2 text-lg leading-8">
-              Express{" "}
-              <Image
-                src="/icons/express.svg"
-                alt="Logo"
-                width={25}
-                height={25}
-              />
-            </li>
-            <li className="flex items-center gap-2 text-lg leading-8">
-              Fastify{" "}
-              <Image
-                src="/icons/fastify.svg"
-                alt="Logo"
-                width={25}
-                height={25}
-              />
-            </li>
-          </ol>
-        </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 }
